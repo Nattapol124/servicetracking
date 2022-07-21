@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.gtt.server.user.service.CompanySevice"/>
+    <fullyQualifiedTypeName name="org.springframework.context.ApplicationContext"/>
+    <fullyQualifiedTypeName name="org.hibernate.classic.Session"/>
+    <fullyQualifiedTypeName name="org.springframework.orm.hibernate3.SessionHolder"/>
+    <fullyQualifiedTypeName name="org.hibernate.Session"/>
+    <fullyQualifiedTypeName name="org.springframework.orm.hibernate3.SessionFactoryUtils"/>
+    <fullyQualifiedTypeName name="com.gtt.server.user.dao.UserPrefixDao"/>
+    <fullyQualifiedTypeName name="com.gtt.server.user.service.UserPrefixService"/>
+    <fullyQualifiedTypeName name="javax.persistence.Id"/>
+    <fullyQualifiedTypeName name="javax.persistence.Column"/>
+    <fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
+    <fullyQualifiedTypeName name="com.gtt.server.user.dao.UserProjectDao"/>
+    <fullyQualifiedTypeName name="com.gtt.server.user.dao.UserType"/>
+    <fullyQualifiedTypeName name="com.gtt.server.user.entity.UserType"/>
+    <fullyQualifiedTypeName name="javax.persistence.GenerationType"/>
+    <fullyQualifiedTypeName name="com.gtt.server.user.entity.CoreEntity"/>
+    <fullyQualifiedTypeName name="javax.persistence.Entity"/>
+    <fullyQualifiedTypeName name="javax.persistence.Table"/>
+    <fullyQualifiedTypeName name="com.gtt.server.user.dao.CompanyDao"/>
+    <fullyQualifiedTypeName name="com.gtt.server.user.entity.CompanyType"/>
+    <fullyQualifiedTypeName name="com.gtt.server.user.dao.CompanyTypeDao"/>
+    <fullyQualifiedTypeName name="java.io.Serializable"/>
+    <fullyQualifiedTypeName name="com.core.dao.CoreDao"/>
+    <fullyQualifiedTypeName name="com.core.dao.impl.CoreDaoImpl"/>
+    <fullyQualifiedTypeName name="com.core.service.CoreService"/>
+    <fullyQualifiedTypeName name="com.core.service.impl.CoreServiceImpl"/>
+    <fullyQualifiedTypeName name="javax.persistence.JoinColumn"/>
+    <fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
+    <fullyQualifiedTypeName name="org.apache.catalina.servlets.DefaultServlet.SortManager.Order"/>
+    <fullyQualifiedTypeName name="org.hibernate.criterion.Order"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="com.gtt.server.user.entity.RequestType"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.gtt.server.user.entity.Request"/>
+    <fullyQualifiedTypeName name="com.gtt.server.user.service.RequestService"/>
+    <fullyQualifiedTypeName name="com.gtt.server.user.entity.User"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+</qualifiedTypeNameHistroy>

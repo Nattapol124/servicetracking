@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<%@page contentType="text/html; charset=utf-8"%>
+<%@taglib uri="/tld/struts-html.tld" prefix="html"%>
+<%@taglib uri="/tld/struts-bean.tld" prefix="bean"%>
+<%@taglib uri="/tld/struts-logic.tld" prefix="logic"%>
+<%@taglib uri="/tld/c.tld" prefix="c"%>
+<%@taglib uri="/tld/fn.tld" prefix="fn"%>
+
+<%@ include file="/page/inc_header_script.jsp"%>
+
+
+
+<body>
+	
+      <form action = "" method = "post"
+         enctype = "multipart/form-data">
+         <label>ชื่อโครงการ</label>
+         <input type = "text" name = "project" />
+        <label>ปัญหา</label>
+         <input type = "text" name = "title" />
+         <label>Select a file to upload: </label>
+         <input type = "file" name = "file" size = "50" accept=".pdf, .png, .jpg, .jpeg"/>
+         <label>ปัญหาที่เกิด</label>
+         <input type = "text" name = "remark" />
+         <input type = "submit" value = "Upload File" />
+      </form>
+</body>
