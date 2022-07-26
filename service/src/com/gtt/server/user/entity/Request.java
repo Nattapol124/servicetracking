@@ -54,8 +54,30 @@ public class Request extends CoreEntity{
 	@Column(name = "request_file")
 	private String file;
 	
+	@Column(name = "request_dateStart")
+	private String dateStart;
+	
+	@Column(name = "request_dateEnd")
+	private String dateEnd;
+	
 
 
+
+	public String getDateStart() {
+		return dateStart;
+	}
+
+	public void setDateStart(String dateStart) {
+		this.dateStart = dateStart;
+	}
+
+	public String getDateEnd() {
+		return dateEnd;
+	}
+
+	public void setDateEnd(String dateEnd) {
+		this.dateEnd = dateEnd;
+	}
 
 	public Request(int parseInt) {
 		// TODO Auto-generated constructor stub

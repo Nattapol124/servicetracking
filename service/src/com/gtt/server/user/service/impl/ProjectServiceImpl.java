@@ -1,6 +1,9 @@
 package com.gtt.server.user.service.impl;
 
 import java.io.Serializable;
+import java.util.List;
+
+import org.springframework.dao.DataAccessException;
 
 import com.core.service.impl.CoreServiceImpl;
 import com.gtt.server.user.dao.ProjectDao;
@@ -15,4 +18,10 @@ public class ProjectServiceImpl extends CoreServiceImpl<Project, Serializable> i
 		
 		this.projectDao = projectDao;
 	}
+	
+	@Override
+	public List getProject(String customerId, String userId) throws DataAccessException {
+		return projectDao.getProject(customerId, userId);
+	}
+
 }

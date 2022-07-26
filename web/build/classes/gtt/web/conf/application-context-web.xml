@@ -18,7 +18,11 @@
 		<property name="requestService">
 			<ref bean="requestService" />
 		</property>
+		<property name="projectService">
+			<ref bean="projectService" />
+		</property>
 		
+
 	</bean>
 	
 	

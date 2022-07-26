@@ -40,7 +40,7 @@ public class Company extends CoreEntity{
 	@JoinColumn(name = "id_company_type")
 	private CompanyType companyType;
 	
-	
+
 	public String getFax() {
 		return fax;
 	}

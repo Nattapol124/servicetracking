@@ -32,13 +32,21 @@
     <fullyQualifiedTypeName name="org.hibernate.criterion.Order"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
     <fullyQualifiedTypeName name="com.gtt.server.user.entity.RequestType"/>
-    <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="com.gtt.server.user.entity.Request"/>
     <fullyQualifiedTypeName name="com.gtt.server.user.service.RequestService"/>
     <fullyQualifiedTypeName name="com.gtt.server.user.entity.User"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="org.springframework.dao.DataAccessException"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.gtt.server.user.service.UserProjectService"/>
+    <fullyQualifiedTypeName name="org.apache.struts.action.DynaActionForm"/>
+    <fullyQualifiedTypeName name="org.apache.poi.ss.usermodel.DateUtil"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="com.gtt.server.user.entity.UserProject"/>
+    <fullyQualifiedTypeName name="com.gtt.server.user.entity.Project"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
 </qualifiedTypeNameHistroy>

@@ -27,6 +27,14 @@
 h2{
 	margin-top:50px;
 }
+
+.center {
+	allign:center;
+}
+
+tr:hover .hover{
+	background-color:black;
+}
 	
 </style>
 	<html:form action="/index" styleId="eduForm">
@@ -63,13 +71,18 @@ h2{
 						  <tbody>
 						  	
 								<logic:iterate id="item" name="indexForm" property="resultList" indexId="index">
-								<tr>
+								<tr class="hover">
 								<td><%= index+1 %></td>
 								<td align="center">${item.user.nickname }</td>
 								<td align="center">${item.userproc.id }</td>
 								<c:if test="${item.request_status.id eq '1' }">
-									<td align="center"><a href="#" class="btn btn-warning">${item.request_status.name }</a></td>
+									<td align="center"><a href="#collapseExample" class="btn btn-warning" data-toggle="collapse">${item.request_status.name }</a></td>
 								</c:if>
+								<p class="collapse" id="collapseExample">
+								  
+								    damn
+								  </p>
+								
 								
 								<c:if test="${item.request_status.id eq '2' }">
 									<td align="center"><a href="#" class="btn btn-warning">${item.request_status.name }</a></td>
@@ -86,6 +99,7 @@ h2{
 								<c:if test="${item.request_status.id eq '5' }">
 									<td align="center"><a href="#" class="btn btn-danger">${item.request_status.name }</a></td>
 								</c:if>
+								
 								
 <%-- 								<td>${item.request_type.name }</td> --%>
 <%-- 								<td>${item.project.name }</td> --%>

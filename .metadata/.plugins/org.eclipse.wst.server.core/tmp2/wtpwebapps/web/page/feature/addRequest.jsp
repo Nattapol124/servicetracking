@@ -11,61 +11,72 @@
 
 <script language="javascript" type="text/javascript">
 
-	function addss() {
-// 		console.log("addssaddssaddssaddss");
-// 		Swal.fire({
-// 			  title: 'Are you sure?',
-// 			  text: "You want to add request!",
-// 			  icon: 'warning',
-// 			  showCancelButton: true,
-// 			  confirmButtonColor: '#3085d6',
-// 			  cancelButtonColor: '#d33',
-// 			  confirmButtonText: 'Yes'
-// 			}).then((result) => {
-// 				if(result.isConfirmed){
+	function add() {
+		console.log("addssaddssaddssaddss");
+		Swal.fire({
+			  title: 'Are you sure?',
+			  text: "You want to add request!",
+			  icon: 'warning',
+			  showCancelButton: true,
+			  confirmButtonColor: '#3085d6',
+			  cancelButtonColor: '#d33',
+			  confirmButtonText: 'Yes'
+			}).then((result) => {
+				if(result.isConfirmed){
 // 					document.forms[0].mode.value = "addRequest";
 // 					document.forms[0].submit();
-// 				}else{
-// 					document.forms[0].mode.value = "request";
-// 					document.forms[0].submit();
+				}else{
+					document.forms[0].mode.value = "getProject";
+					document.forms[0].submit();
 					
-// 				}
+				}
 			    
-// 			  })
+			  })
 	}
 	function back() {
 		document.forms[0].mode.value = "getRequest";
 		document.forms[0].submit();
 	}
+	function submitEnter() {
+		if (checkKeyEnter() == true) submitFormLogin();
+	}
+	
+	function checkKeyEnter(){
+		   if(event.keyCode==13) return true;
+	}
+	
 </script>
 
 <body>
 <html:form action="/index" styleId="eduForm">
 <html:hidden property="mode"/>
-<%-- 	<%@ include file="/page/inc_header.jsp"%> --%>
+	<%@ include file="/page/inc_header.jsp"%>
 		<h2>รายงานปัญหา</h2>
 
          <div>
-         <label>ชื่อโครงการ</label>
-         <input type = "text" name = "project" />
+         	<label>ชื่อโครงการ</label>
+        	<html:select property="project" styleClass="form-control">	
+        		<option value="" disabled selected>Select your project</option>
+				<html:optionsCollection property="projectList" value="id" label="name" />
+			</html:select>
          </div>
          
          <div>
-         <label>ปัญหา</label>
-         <input type = "text" name = "title" />
+         	<label>หัวข้อปัญหา</label>
+         	<html:text property="title" onkeypress="submitEnter();" styleClass="form-control" styleId="title" placeHolder="หัวข้อปัญหา" />
          </div>
          
         <div>
         <label>Select a file to upload: </label>
-         <input type = "file" name = "file" size = "50" accept=".pdf, .png, .jpg, .jpeg"/>
+         <input property="file" type = "file" accept=".pdf, .png, .jpg, .jpeg"/>
         </div>
         
         <div>
         <label>ปัญหาที่เกิด</label>
-         <input type = "text" name = "remark" />
+         <html:text property="remark" onkeypress="submitEnter();" styleClass="form-control" styleId="remark" placeHolder="ปัญหาที่เกิด" />
         </div>
          
-         <button>upload file</button>
+         <button onClick="add()">upload file</button>
          <button onclick="back()">back</button>
 
  </html>

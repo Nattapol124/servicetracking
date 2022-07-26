@@ -135,7 +135,7 @@
 
 <html:form action="/index" styleId="eduForm">
 <html:hidden property="mode"/>
-	
+
 	<div class="container">
 		<div class="row" style="margin-top:10px">
 			<div id="main-login">
@@ -161,8 +161,8 @@
 									<button type="button" class="btn btn-blue btn-sm" style="width:100%;" onclick="submitFormLogin();">เข้าสู่ระบบ</button>
 								</div>
 							</div>
-							
-							
+						
+								
 						</div>
 					</div>
 				</div>

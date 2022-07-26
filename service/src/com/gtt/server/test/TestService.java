@@ -91,7 +91,7 @@ public class TestService extends TestCase {
 	
 	public void test() throws Exception {
 //		System.out.print(requestService.getAllItems().size());
-//		System.out.print(projectService.getAllItems().size());
+		System.out.print(projectService.getAllItems().size());
 //		System.out.print(userService.getAllItems().size());
 //		System.out.print(userPositionService.getAllItems().size());
 //		System.out.print(companyTypeService.getAllItems().size());
