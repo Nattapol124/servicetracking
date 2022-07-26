@@ -3,6 +3,8 @@ package com.core.service;
 import java.io.Serializable;
 import java.util.List;
 
+import org.springframework.dao.DataAccessException;
+
 public interface CoreService<T, PK extends Serializable> {
 
 	public void saveItem(T entity);

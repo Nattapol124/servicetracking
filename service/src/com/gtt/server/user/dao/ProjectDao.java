@@ -11,6 +11,7 @@ import com.gtt.server.user.entity.Project;
 
 public interface ProjectDao extends CoreDao<Project, Serializable> {
 
-//	public List findProjectList(String id_project, String id_company, String project_name) throws DataAccessException;
+
+	public List findProjectList(String company) throws DataAccessException;
 
 }

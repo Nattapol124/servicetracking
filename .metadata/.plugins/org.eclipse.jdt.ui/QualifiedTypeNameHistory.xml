@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.gtt.server.user.service.UserPrefixService"/>
-    <fullyQualifiedTypeName name="com.gtt.server.user.service.UserProjectService"/>
     <fullyQualifiedTypeName name="com.gtt.server.user.service.QuestionService"/>
     <fullyQualifiedTypeName name="com.gtt.server.user.service.QuestionProcessService"/>
-    <fullyQualifiedTypeName name="com.gtt.server.user.service.ProjectService"/>
     <fullyQualifiedTypeName name="javax.security.auth.message.callback.PrivateKeyCallback.Request"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
@@ -60,4 +57,7 @@
     <fullyQualifiedTypeName name="com.gtt.server.user.dao.impl.CompanyDaoImpl"/>
     <fullyQualifiedTypeName name="com.gtt.server.user.entity.Company"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="com.gtt.server.user.entity.UserProject"/>
+    <fullyQualifiedTypeName name="com.gtt.server.user.service.ProjectService"/>
+    <fullyQualifiedTypeName name="com.gtt.server.user.entity.Project"/>
 </qualifiedTypeNameHistroy>

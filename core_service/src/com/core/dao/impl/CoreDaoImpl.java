@@ -3,6 +3,7 @@ package com.core.dao.impl;
 import java.io.Serializable;
 import java.util.List;
 
+import org.springframework.dao.DataAccessException;
 import org.springframework.orm.ObjectRetrievalFailureException;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
@@ -81,4 +82,6 @@ public class CoreDaoImpl<T, PK extends Serializable> extends
 	public int sqlQuary(String sql) {
 		return getSession().createSQLQuery(sql).executeUpdate();
 	}
+
+
 }

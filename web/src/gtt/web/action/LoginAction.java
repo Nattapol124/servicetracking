@@ -10,7 +10,9 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.DynaActionForm;
 
+import com.gtt.server.user.entity.Project;
 import com.gtt.server.user.entity.User;
+import com.gtt.server.user.service.ProjectService;
 import com.gtt.server.user.service.RequestService;
 import com.gtt.server.user.service.UserService;
 
@@ -19,15 +21,17 @@ public class LoginAction extends CoreAction {
 	private static String loginForm = "loginForm";
 	private static String actionName = "login.htm";
 	private UserService userService;
+	private ProjectService projectService;
 	private RequestService requestService;
 	public ActionForward init(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		try {
 			DynaActionForm dynaForm = (DynaActionForm) form;
 			
 			dynaForm.set("resultList", null);
+			dynaForm.set("resultProjectList", null);
 
 //			Constant constant = constantService.getItem(1);
-//			setObjectSession(request, SESSION_PATH, constant.getUploadPath());
+//			setObjectSession(request, SESSION_PATH, constant.getUploadPath()) 
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -36,6 +40,10 @@ public class LoginAction extends CoreAction {
 		return mapping.findForward("MA01");
 	}
 	
+	public void setProjectService(ProjectService projectService) {
+		this.projectService = projectService;
+	}
+
 	public ActionForward index(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		try {
@@ -84,11 +92,11 @@ public class LoginAction extends CoreAction {
 			List<User> userList = userService.getUserList(company);
 			User user = userList.iterator().next();
 				
-			dynaForm.set("username", user.getUsername());
-			dynaForm.set("user_firstName", user.getUser_firstname());
-			dynaForm.set("user_lastName", user.getUser_lastname());
-			dynaForm.set("user_email", user.getUser_email());
-			dynaForm.set("user_phone", user.getUser_phone());
+//			dynaForm.set("username", user.getUsername());
+//			dynaForm.set("user_firstName", user.getUser_firstname());
+//			dynaForm.set("user_lastName", user.getUser_lastname());
+//			dynaForm.set("user_email", user.getUser_email());
+//			dynaForm.set("user_phone", user.getUser_phone());
 
 			dynaForm.set("resultList", userList);
 			request.setAttribute("resultList", userList);
@@ -179,11 +187,6 @@ public class LoginAction extends CoreAction {
 	}
 	
 	
-	
-	
-	
-	
-	
 	public UserService getUserService() {
 		return userService;
 	}
@@ -192,6 +195,54 @@ public class LoginAction extends CoreAction {
 	public void setUserService(UserService userService) {
 		this.userService = userService;
 		
+	}
+	
+	public ProjectService getProjectService() {
+		return projectService;
+	}
+	
+	
+	public void setprojectService(ProjectService projectService) {
+		this.projectService = projectService;
+		
+	}
+	
+	
+	
+	public ActionForward showProject(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+		 User obj = (User) getObjectSession(request, SESSION_USER);
+		 System.out.println("Hello Project!");
+		 String company = String.valueOf(obj.getId_company().getId());
+		 try {
+			DynaActionForm dynaForm = (DynaActionForm) form;
+			List<Project> projectList = projectService.getProjectList(company);
+			System.out.println("projectList = "+projectList);
+			Project project = projectList.iterator().next();
+//			System.out.println(project+"test project");	
+//			dynaForm.set("id_project", project.getId());
+//			dynaForm.set("id_customer", project.getId_customer());
+//			dynaForm.set("project_name", project.getProject_name());
+
+			dynaForm.set("resultProjectList", projectList);
+			request.setAttribute("resultProjectList", projectList);
+			
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return mapping.findForward("MA01");
+	}
+	
+	public ActionForward initChangeUserData(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+		try {
+			DynaActionForm dynaForm = (DynaActionForm) form;
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return mapping.findForward("MA05");
 	}
 
 }	
