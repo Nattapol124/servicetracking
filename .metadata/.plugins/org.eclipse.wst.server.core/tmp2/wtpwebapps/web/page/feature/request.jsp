@@ -7,10 +7,11 @@
 <%@taglib uri="/tld/fn.tld" prefix="fn"%>
 
 <%@ include file="/page/inc_header_script.jsp"%>
-
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <body>
 <script type="text/javascript">
+
 	function submitId(mode) {
 		document.forms[0].mode.value = mode;
 	    document.forms[0].submit();
@@ -21,6 +22,31 @@
 		document.forms[0].submit();
 	}
 	
+	function edit(id){
+		  document.forms[0].mode.value = "editRequest";
+		  	document.forms[0].id.value = id;
+		    document.forms[0].submit();
+	}
+	
+	function del(id){
+		Swal.fire({
+			  title: 'Are you sure?',
+			  text: "You want to delete!",
+			  icon: 'warning',
+			  showCancelButton: true,
+			  confirmButtonColor: '#3085d6',
+			  cancelButtonColor: '#d33',
+			  confirmButtonText: 'Yes'
+			}).then((result) => {
+				if(result.isConfirmed){
+					document.forms[0].mode.value = "deleteRequest";
+				  	document.forms[0].id.value = id;
+				    document.forms[0].submit();
+				}
+			    
+			  })
+	}
+	
 </script>
 
 <style type="text/css">
@@ -28,27 +54,24 @@ h2{
 	margin-top:50px;
 }
 
-.center {
-	allign:center;
-}
 
-tr:hover .hover{
-	background-color:black;
-}
-	
+
 </style>
+
 	<html:form action="/index" styleId="eduForm">
 	<html:hidden property="mode"/>
 	<section class="ftco-section">
 		<%@ include file="/page/inc_header.jsp"%>
 		<div class="container">
+		<div class="wrapper">
 			<div class="row justify-content-center">
 				<div class="text-center col-lg-12">
-					<button onclick="add()">รายงานปัญหา</button>
+					
 					<h2>ตารางการส่งคำร้องเรียน</h2>
 				</div>
 			</div>
-			<div class="row">
+			
+			
 				<div class="col-md-12">
 					<div class="table-wrap">
 					<logic:present name="indexForm" property="resultList">
@@ -56,13 +79,15 @@ tr:hover .hover{
 						<table class="table table-striped">
 						  <thead>
 						    <tr>
-						      <th>NO.</th>
+						      <th class = "text-center">NO.</th>
+						      <th class = "text-center">หัวข้อ</th>
 						      <th class = "text-center">ผู้แจ้งเรื่อง</th>
+						      
 						      <th class = "text-center">ผู้รับผิดชอบ</th>
 						      <th class = "text-center">สถานะ</th>
 <!-- 						      <th>ประเภท</th> -->
 <!-- 						      <th>โครงการ</th> -->
-<!-- 						      <th>หัวข้อ</th> -->
+
 <!-- 						      <th>รายละเอียด</th> -->
 <!-- 						      <th>วันที่ส่งคำร้อง</th> -->
 <!-- 						      <th>ไฟล์</th> -->
@@ -71,51 +96,94 @@ tr:hover .hover{
 						  <tbody>
 						  	
 								<logic:iterate id="item" name="indexForm" property="resultList" indexId="index">
-								<tr class="hover">
-								<td><%= index+1 %></td>
+								<tr>
+								<td align="center"><%= index+1 %></td>
+								<td align="center">${item.title }</td>
 								<td align="center">${item.user.nickname }</td>
 								<td align="center">${item.userproc.id }</td>
 								<c:if test="${item.request_status.id eq '1' }">
-									<td align="center"><a href="#collapseExample" class="btn btn-warning" data-toggle="collapse">${item.request_status.name }</a></td>
+									<td align="center"><a href="#" class="btn btn-warning" data-toggle="modal"  data-target="#exampleModal">${item.request_status.name }</a></td>
 								</c:if>
-								<p class="collapse" id="collapseExample">
-								  
-								    damn
-								  </p>
-								
 								
 								<c:if test="${item.request_status.id eq '2' }">
-									<td align="center"><a href="#" class="btn btn-warning">${item.request_status.name }</a></td>
+									<td align="center"><a href="#" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">${item.request_status.name }</a></td>
 								</c:if>
 								
 								<c:if test="${item.request_status.id eq '3' }">
-									<td align="center"><a href="#" class="btn btn-warning">${item.request_status.name }</a></td>
+									<td align="center"><a href="#" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">${item.request_status.name }</a></td>
 								</c:if>
 								
 								<c:if test="${item.request_status.id eq '4' }">
-									<td align="center"><a href="#" class="btn btn-success">${item.request_status.name }</a></td>
+									<td align="center"><a href="#" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">${item.request_status.name }</a></td>
 								</c:if>
 								
 								<c:if test="${item.request_status.id eq '5' }">
-									<td align="center"><a href="#" class="btn btn-danger">${item.request_status.name }</a></td>
+									<td align="center"><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">${item.request_status.name }</a></td>
 								</c:if>
 								
 								
-<%-- 								<td>${item.request_type.name }</td> --%>
-<%-- 								<td>${item.project.name }</td> --%>
-<%-- 								<td>${item.title }</td> --%>
+<%-- 									<td align="center">${item.request_type.name }</td> --%>
+<%-- 								<td>${item.id}</td> --%>
+								
 <%-- 								<td>${item.remark }</td> --%>
 <%-- 								<td>${item.date }</td> --%>
 <%-- 								<td>${item.file }</td> --%>
+								<c:if test="${item.request_status.id eq '1' }">
+									<td>
+										<button type="button" onclick="edit('${item.id}')" class="btn btn-primary btn-xs">edit</button>
+										<button type="button" onclick="del('${item.id}')" class="btn btn-danger btn-xs">delete</button>
+									</td>
+								
+								</c:if>
+								<c:if test="${item.request_status.id ne '1' }">
+									<td>
+										<button type="button" onclick="" disabled class="btn btn-primary btn-xs">edit</button>
+										<button type="button" onclick="" disabled class="btn btn-danger btn-xs">delete</button>
+									</td>
+								</c:if>
 								</tr>
-								</logic:iterate>
+								<!-- Modal -->
+												<div class="modal fade" id="exampleModal" tabindex="-1"
+													role="dialog" aria-labelledby="exampleModalLabel"
+													aria-hidden="true">
+													<div class="modal-dialog" role="document">
+														<div class="modal-content">
+															<div class="modal-header">
+																<h5 class="modal-title" id="exampleModalLabel">รายละเอียด</h5>
+															</div>
+															<div class="modal-body">
+																<p>ประเภท : ${item.request_type.name }</p>
+																<p>โครงการ : ${item.project.name }</p>
+																<p>รายละเอียด : ${item.remark }</p>
+																<p>วันที่ส่งคำร้อง : ${item.date }</p>
+																<p>ไฟล์ : ${item.file }</p>
+															</div>
+															<div class="modal-footer">
+																<button type="button" class="btn btn-primary"
+																	data-dismiss="modal">OK</button>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+											</logic:iterate>
 						    	
 						  </tbody>
 						</table>
 					</logic:notEmpty>
 					</logic:present>
 					</div>
+<!-- 					<form> -->
+<!-- 						<input class="form-control" style="width:20%"" list="projectList" name="project" id="project"> -->
+<!-- 						<datalist id="projectList"> -->
+<%-- 								<option>${project.name }</option> --%>
+						
+<!-- 						</datalist> -->
+<!-- 					</form> -->
+					
+					<button class="btn-blue btn-sm" onclick="add()">รายงานปัญหา</button>
 				</div>
+				
 			</div>
 		</div>
 	</section>
@@ -125,8 +193,10 @@ tr:hover .hover{
   <script src="js/popper.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/main.js"></script>
+  
 
 	
 	</html>
 	</html:form>
+</section>
 </body>

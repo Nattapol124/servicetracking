@@ -47,9 +47,30 @@
 <header class="header">
 	<div class="top-nav notification-row">
         <ul class="nav pull-right top-menu">
-	      	<li class="dropdown topbar-user pull-right">
-				<a href="#" style="color: #fff;margin-top: 10px;" style="width:100%;" onclick="logout()">ออกจากระบบ</button>
-			</li>
+	      	<div class="top-nav notification-row">
+				<!-- notificatoin dropdown start-->
+		        <ul class="nav pull-right top-menu">
+					<!-- user login dropdown start-->
+					<li class="dropdown">
+						<a href="#" style="z-index: 900;text-align: right;">
+							<span class="username">${SSUser.firstname}</span>
+						</a>
+						<a href="#" style="font-size:15px;font-family: pridi;top: -16px;margin-bottom: -19px;z-index: 100;">
+							${SSUser.userPosition.name}
+						</a>
+					</li>
+					<!-- logout-->
+			      	<li class="dropdown topbar-user pull-right">
+						<a href="#" onclick="logout()" style="color: #fff;margin-top: 10px;" title="ออกจากระบบ">
+<!-- 							<i class="fa fa-sign-out" style="font-size: 20px;"></i> -->
+							<span style="font-size:16px;font-family: pridi;">ออกจากระบบ</span>
+						</a>
+					</li>
+		          	<!-- logout-->
+		          	
+				</ul>
+			<!-- notificatoin dropdown end-->
+			</div>
           	
 		</ul>
 	</div>

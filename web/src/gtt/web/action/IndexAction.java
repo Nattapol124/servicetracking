@@ -17,6 +17,7 @@ import com.gtt.server.user.entity.User;
 import com.gtt.server.user.service.ProjectService;
 import com.gtt.server.user.service.RequestService;
 import com.gtt.server.user.service.UserService;
+import com.util.DateTimeUtil;
 
 
 public class IndexAction extends CoreAction {
@@ -45,6 +46,10 @@ public class IndexAction extends CoreAction {
 			List<Request> requestList = requestService.getReqByUser(String.valueOf(user.getId()));
 			dynaForm.set("resultList", requestList);;
 			request.setAttribute("resultList", requestList);
+			
+			List<Project> projectList = projectService.getProject(String.valueOf(user.getCustomer().getId()), String.valueOf(user.getId()));
+			dynaForm.set("projectList", projectList);
+			request.setAttribute("projectList", projectList);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -98,7 +103,6 @@ public class IndexAction extends CoreAction {
 		try {
 			DynaActionForm dynaForm = (DynaActionForm) form;
 			User user = (User) getObjectSession(request, SESSION_USER);
-//			System.out.println(String.valueOf(user.getCustomer().getId()));
 			List<Project> projectList = projectService.getProject(String.valueOf(user.getCustomer().getId()), String.valueOf(user.getId()));
 			dynaForm.set("projectList", projectList);
 			request.setAttribute("projectList", projectList);
@@ -130,14 +134,43 @@ public class IndexAction extends CoreAction {
 			entity.setRemark(dynaForm.getString("remark"));
 			entity.setDate(null);
 			entity.setFile(dynaForm.getString("file"));
+			entity.setCreateBy(user.getUsername());
+			entity.setCreateDate(DateTimeUtil.getSystemDate());
 			
+			requestService.saveItem(entity);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
 		return mapping.findForward("AddRequest");
 	}
-	
+	public ActionForward deleteRequest(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception{
+		try {
+			DynaActionForm dynaForm = (DynaActionForm) form;
+			requestService.removeItem(Integer.parseInt(dynaForm.getString("id")));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return mappingForward(mapping, request, "mode", "getRequest", "index.htm", "eduForm", null);
+	}
+	public ActionForward editRequest(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception{
+		try {
+			DynaActionForm dynaForm = (DynaActionForm) form;
+			
+			User user = (User) getObjectSession(request, SESSION_USER);
+			Request req = requestService.getItem(Integer.parseInt(dynaForm.getString("id")));
+			req.setTitle(dynaForm.getString("title"));
+			req.setFile(dynaForm.getString("file"));
+			req.setRemark(dynaForm.getString("remark"));
+			req.setUpdateBy(user.getUsername());
+			req.setUpdateDate(DateTimeUtil.getSystemDate());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return mappingForward(mapping, request, "mode", "getRequest", "index.htm", "eduForm", null);
+	}
 	
 	public UserService getUserService() {
 		return userService;

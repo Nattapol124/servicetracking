@@ -45,7 +45,8 @@ public class RequestDaoImpl extends CoreDaoImpl<Request, Serializable> implement
 				RequestStatus reqS = new RequestStatus();
 				RequestType reqT = new RequestType();
 				Project project = new Project();
-				Request item = new Request(Integer.parseInt(String.valueOf(obj[0])));
+				Request item = new Request();
+				item.setId(Integer.parseInt(String.valueOf(obj[0])));
 				user.setId(Integer.parseInt(String.valueOf( obj[1])));
 				user.setNickname(String.valueOf(obj[2]));
 				item.setUser(user);

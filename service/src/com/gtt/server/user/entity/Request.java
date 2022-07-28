@@ -79,7 +79,7 @@ public class Request extends CoreEntity{
 		this.dateEnd = dateEnd;
 	}
 
-	public Request(int parseInt) {
+	public Request() {
 		// TODO Auto-generated constructor stub
 	}
 

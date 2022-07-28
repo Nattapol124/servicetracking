@@ -12,10 +12,9 @@
 <script language="javascript" type="text/javascript">
 
 	function add() {
-		console.log("addssaddssaddssaddss");
 		Swal.fire({
 			  title: 'Are you sure?',
-			  text: "You want to add request!",
+			  text: "You want to logout!",
 			  icon: 'warning',
 			  showCancelButton: true,
 			  confirmButtonColor: '#3085d6',
@@ -23,15 +22,12 @@
 			  confirmButtonText: 'Yes'
 			}).then((result) => {
 				if(result.isConfirmed){
-// 					document.forms[0].mode.value = "addRequest";
-// 					document.forms[0].submit();
-				}else{
-					document.forms[0].mode.value = "getProject";
+					document.forms[0].mode.value = "addRequest";
 					document.forms[0].submit();
-					
 				}
 			    
 			  })
+		
 	}
 	function back() {
 		document.forms[0].mode.value = "getRequest";
@@ -44,7 +40,7 @@
 	function checkKeyEnter(){
 		   if(event.keyCode==13) return true;
 	}
-	
+		
 </script>
 
 <body>
@@ -52,7 +48,8 @@
 <html:hidden property="mode"/>
 	<%@ include file="/page/inc_header.jsp"%>
 		<h2>รายงานปัญหา</h2>
-
+		<section id="main-content">
+		<section class="wrapper">
          <div>
          	<label>ชื่อโครงการ</label>
         	<html:select property="project" styleClass="form-control">	
@@ -76,9 +73,12 @@
          <html:text property="remark" onkeypress="submitEnter();" styleClass="form-control" styleId="remark" placeHolder="ปัญหาที่เกิด" />
         </div>
          
-         <button onClick="add()">upload file</button>
-         <button onclick="back()">back</button>
-
+         <button class="btn-blue btn-sm" onClick="add()">upload file</button>
+         <button class="btn-blue btn-sm" onclick="back()">back</button>
+         
+         
+		</section>
+		</section>
  </html>
 </html:form>   
 

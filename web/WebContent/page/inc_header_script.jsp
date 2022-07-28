@@ -7,8 +7,8 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<meta name="keyword" content="">
-
-	<title>ระบบ Service Tracking</title>
+	
+	<title>Service Tracking</title>
 
 	<!-- Bootstrap CSS -->
 	<link href="${pageContext.request.contextPath}/ui/css/bootstrap.min.css" rel="stylesheet"/>
@@ -21,7 +21,7 @@
 	<!-- datatable -->
 	<link href="${pageContext.request.contextPath}/ui/css/dataTables.bootstrap.css" rel="stylesheet"/>
 	<!-- Custom styles -->
-	<%-- <link href="${pageContext.request.contextPath}/ui/css/style.css" rel="stylesheet"/> --%>
+	<link href="${pageContext.request.contextPath}/ui/css/style.css" rel="stylesheet"/>
 	<link href="${pageContext.request.contextPath}/ui/css/style-responsive.css" rel="stylesheet" />
 	<link href="${pageContext.request.contextPath}/ui/css/jquery-ui-10.12.1.css" rel="stylesheet"/>
 	<link href="${pageContext.request.contextPath}/ui/css/style-button.css" rel="stylesheet"/>
