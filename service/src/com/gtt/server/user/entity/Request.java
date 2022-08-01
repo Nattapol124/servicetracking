@@ -1,6 +1,7 @@
 package com.gtt.server.user.entity;
 
-import java.sql.Date;
+
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +11,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.core.entity.CoreEntity;
+
 
 @Entity
 @Table(name = "request")
@@ -21,152 +25,106 @@ public class Request extends CoreEntity{
 	@Column(name = "id_request")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
 	@ManyToOne
 	@JoinColumn(name = "id_user")
-	private User user;
-	
+	private User id_user;
 	@ManyToOne
 	@JoinColumn(name = "id_user_process")
-	private User userproc;
-	
-	@ManyToOne
-	@JoinColumn(name = "id_request_status")
-	private RequestStatus request_status;
-
-	@ManyToOne
-	@JoinColumn(name = "id_request_type")
-	private RequestType request_type;
-	
+	private User id_user_process;
+	@Column(name = "id_request_status")
+	private RequestStatus id_request_status;
+	@Column(name = "id_request_type")
+	private RequestType id_request_type;
 	@ManyToOne
 	@JoinColumn(name = "id_project")
-	private Project project;
-	
-	@Column(name = "request_title")
-	private String title;
-	
+	private Project id_project;
 	@Column(name = "request_remark")
-	private String remark;
-	
+	private String request_remark;
 	@Column(name = "request_date")
-	private Date date;
-	
+	private Date request_date;
 	@Column(name = "request_file")
-	private String file;
-	
+	private String request_file;
 	@Column(name = "request_dateStart")
-	private String dateStart;
-	
+	private Date request_dateStart;
 	@Column(name = "request_dateEnd")
-	private String dateEnd;
+	private Date request_dateEnd;
+	@Column(name = "request_title")
+	private String request_title;
 	
-
-
-
-	public String getDateStart() {
-		return dateStart;
-	}
-
-	public void setDateStart(String dateStart) {
-		this.dateStart = dateStart;
-	}
-
-	public String getDateEnd() {
-		return dateEnd;
-	}
-
-	public void setDateEnd(String dateEnd) {
-		this.dateEnd = dateEnd;
-	}
-
-	public Request() {
-		// TODO Auto-generated constructor stub
-	}
-
 	public int getId() {
 		return id;
 	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
-	public User getUser() {
-		return user;
+	public User getId_user() {
+		return id_user;
 	}
-
-	public void setUser(User user) {
-		this.user = user;
+	public void setId_user(User id_user) {
+		this.id_user = id_user;
 	}
-
-	public User getUserproc() {
-		return userproc;
+	public User getId_user_process() {
+		return id_user_process;
 	}
-
-	public void setUserproc(User userproc) {
-		this.userproc = userproc;
+	public void setId_user_process(User id_user_process) {
+		this.id_user_process = id_user_process;
 	}
-
-	public RequestStatus getRequest_status() {
-		return request_status;
-	}
-
-	public void setRequest_status(RequestStatus request_status) {
-		this.request_status = request_status;
-	}
-
-	public RequestType getRequest_type() {
-		return request_type;
-	}
-
-	public void setRequest_type(RequestType request_type) {
-		this.request_type = request_type;
-	}
-
-	public Project getProject() {
-		return project;
-	}
-
-	public void setProject(Project project) {
-		this.project = project;
-	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public String getRemark() {
-		return remark;
-	}
-
-	public void setRemark(String remark) {
-		this.remark = remark;
-	}
-
-	public Date getDate() {
-		return date;
-	}
-
-	public void setDate(Date date) {
-		this.date = date;
-	}
-
-	public String getFile() {
-		return file;
-	}
-
-	public void setFile(String file) {
-		this.file = file;
-	}
-
-
-
 	
-
+	public RequestStatus getId_request_status() {
+		return id_request_status;
+	}
+	public void setId_request_status(RequestStatus id_request_status) {
+		this.id_request_status = id_request_status;
+	}
+	public RequestType getId_request_type() {
+		return id_request_type;
+	}
+	public void setId_request_type(RequestType id_request_type) {
+		this.id_request_type = id_request_type;
+	}
+	public Project getId_project() {
+		return id_project;
+	}
+	public void setId_project(Project id_project) {
+		this.id_project = id_project;
+	}
+	public String getRequest_remark() {
+		return request_remark;
+	}
+	public void setRequest_remark(String request_remark) {
+		this.request_remark = request_remark;
+	}
+	public Date getRequest_date() {
+		return request_date;
+	}
+	public void setRequest_date(Date request_date) {
+		this.request_date = request_date;
+	}
+	public String getRequest_file() {
+		return request_file;
+	}
+	public void setRequest_file(String request_file) {
+		this.request_file = request_file;
+	}
+	
+	public Date getRequest_dateStart() {
+		return request_dateStart;
+	}
+	public void setRequest_dateStart(Date request_dateStart) {
+		this.request_dateStart = request_dateStart;
+	}
+	public Date getRequest_dateEnd() {
+		return request_dateEnd;
+	}
+	public void setRequest_dateEnd(Date request_dateEnd) {
+		this.request_dateEnd = request_dateEnd;
+	}
+	public String getRequest_title() {
+		return request_title;
+	}
+	public void setRequest_title(String request_title) {
+		this.request_title = request_title;
+	}
 	
 	
 }

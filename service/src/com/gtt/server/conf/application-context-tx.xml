@@ -10,8 +10,13 @@
         <property name="dataSource" ref="dataSource" />
     </bean>
     <aop:config>
+<<<<<<< HEAD
+        <aop:pointcut id="coreServiceMethods" expression="execution(* com.gtt.server.user.service.impl.*ServiceImpl.*(..))" />
+        <aop:pointcut id="eduServiceMethods" expression="execution(* com.gtt.server.*.service.impl.*ServiceImpl.*(..))" />
+=======
         <aop:pointcut id="coreServiceMethods" expression="execution(* com.core.service.impl.*ServiceImpl.*(..))" />
         <aop:pointcut id="eduServiceMethods" expression="execution(* com.sme.server.*.service.impl.*ServiceImpl.*(..))" />
+>>>>>>> bank
        	<aop:advisor advice-ref="txAdviceService" pointcut-ref="coreServiceMethods" />
         <aop:advisor advice-ref="txAdviceService" pointcut-ref="eduServiceMethods" />
     </aop:config>

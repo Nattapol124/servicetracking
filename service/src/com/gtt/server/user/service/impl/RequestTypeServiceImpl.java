@@ -7,6 +7,7 @@ import com.gtt.server.user.dao.RequestTypeDao;
 import com.gtt.server.user.entity.RequestType;
 import com.gtt.server.user.service.RequestTypeService;
 
+
 public class RequestTypeServiceImpl extends CoreServiceImpl<RequestType, Serializable> implements RequestTypeService{
 	private RequestTypeDao requestTypeDao;
 	
@@ -15,4 +16,5 @@ public class RequestTypeServiceImpl extends CoreServiceImpl<RequestType, Seriali
 		
 		this.requestTypeDao = requestTypeDao;
 	}
+
 }

@@ -11,7 +11,11 @@
     	 
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
 
+<<<<<<< HEAD
+		<property name="url" value="jdbc:mysql://localhost:3306/question?useUnicode=true&amp;characterEncoding=UTF-8"/>
+=======
 		<property name="url" value="jdbc:mysql://localhost:3306/dbquestionreport?useUnicode=true&amp;characterEncoding=UTF-8"/>
+>>>>>>> bank
 		
 		<property name="username" value="root"/>
 		<property name="password" value=""/> <!-- root -->
@@ -19,3 +23,7 @@
 	</bean>
 
 </beans>
+<<<<<<< HEAD
+   
+=======
+>>>>>>> bank

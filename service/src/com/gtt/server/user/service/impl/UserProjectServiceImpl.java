@@ -10,6 +10,7 @@ import com.gtt.server.user.dao.UserProjectDao;
 import com.gtt.server.user.entity.UserProject;
 import com.gtt.server.user.service.UserProjectService;
 
+
 public class UserProjectServiceImpl extends CoreServiceImpl<UserProject, Serializable> implements UserProjectService{
 
 	private UserProjectDao userProjectDao;

@@ -1,2 +1,6 @@
 eclipse.preferences.version=1
+<<<<<<< HEAD
+org.eclipse.debug.core.USE_STEP_FILTERS=true
+=======
+>>>>>>> bank
 prefWatchExpressions=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<watchExpressions/>\r\n

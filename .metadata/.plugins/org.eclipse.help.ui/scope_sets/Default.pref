@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+#Wed Jul 20 17:17:46 ICT 2022
+org.eclipse.help.ui.localSearch.master=true
+org.eclipse.sdk.Google.master=true
+org.eclipse.sdk.Eclipse.master=true
+=======
 #Mon Jun 27 16:57:00 ICT 2022
 org.eclipse.help.ui.localSearch.master=true
+>>>>>>> bank
 __DEFAULT__=true

@@ -1,14 +1,24 @@
+<<<<<<< HEAD
+	<!DOCTYPE html>
+=======
 <!DOCTYPE html>
+>>>>>>> bank
 <%@page contentType="text/html; charset=utf-8"%>
 <%@taglib uri="/tld/struts-html.tld" prefix="html"%>
 <%@taglib uri="/tld/struts-logic.tld" prefix="logic"%>
 <%@taglib uri="/tld/struts-bean.tld" prefix="bean"%>
 <%@taglib uri="/tld/c.tld" prefix="c"%>
+<<<<<<< HEAD
+<%@ include file="/page/inc_header_script.jsp"%>
+
+
+=======
 
 <%@ include file="/page/inc_header_script.jsp"%>
 
 
 
+>>>>>>> bank
 <body>
 
 <script language="javascript" type="text/javascript">
@@ -23,7 +33,11 @@
 			  },
 			  success: function() {}
 		});
+<<<<<<< HEAD
+
+=======
 	
+>>>>>>> bank
 		$("#eduForm").validate({
 			rules: {
 				un: "required",
@@ -41,6 +55,50 @@
 	      	submitHandler: function(form) {
 	      		document.forms[0].mode.value = 'login';
 		   	 	document.forms[0].submit();
+<<<<<<< HEAD
+			}
+		});
+		
+		$('#un').focus();
+	});
+  	
+	function submitEnter() {
+		if (checkKeyEnter() == true) submitFormLogin();
+	}
+	function checkKeyEnter(){
+	   if(event.keyCode==13) return true;
+	}
+	function submitFormLogin() {
+		$("#eduForm").submit();
+		document.forms[0].action = 'login.htm?mode=login';
+   	 	document.forms[0].submit();
+	}
+	
+	function showDialogLogin(url,title,size){
+		$.post(url,{}, 
+			function(results) {
+				var $textAndPic = $('<div id="dialogs"></div>');
+				$textAndPic.append(results);
+				BootstrapDialog.show({
+					type: BootstrapDialog.TYPE_DEFAULT,
+					title: title,
+		          	cssClass : size,
+		          	message: $textAndPic,
+		          	draggable: true	 ,
+		          	buttons:[{
+		                 label: 'ปิดหน้าจอ',
+		                 action: function(dialogItself){
+		                     dialogItself.close();
+		                 }
+		            }]
+		       });				 
+		});	
+	}
+</script>
+
+
+<style type="text/css">
+=======
 			   	
 			}
 		});
@@ -75,11 +133,35 @@
 		position: absolute;
 		top: 150px;
 	}
+>>>>>>> bank
 	html,body{
 	    position: relative;
 	    height: 100%;
 	}
 	body {
+<<<<<<< HEAD
+	
+	
+	position: center;
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	
+	background: linear-gradient(136.16deg, #042153 5.45%, #1DA1B0 60.18%);
+	
+	}
+	#main-login {
+		position: absolute;
+		min-width: 400px;
+		min-height: 350px; /* 450px */
+		width: 400px;
+		height: 350px; /* 450px */
+	   	right: 200px ;
+	   	top:240px;
+	    background-color: #ffffff;
+	    padding: 5px 0px 0px 0px;
+=======
 		background: linear-gradient(45.3deg, #40408D 0%, #548FC5 96.5%), linear-gradient(0deg, #40408D, #40408D), linear-gradient(0deg, #CCCCFE, #CCCCFE), linear-gradient(0deg, #302988, #302988), linear-gradient(0deg, #232378, #232378), linear-gradient(180deg, rgba(197, 84, 146, 0.5) 2.31%, rgba(77, 33, 150, 0.536563) 41.85%, rgba(0, 0, 153, 0.56) 83.08%);
 		
 	}
@@ -104,12 +186,30 @@
 	    margin: 40px auto 20px;
 	    background-color: #ffffff;
 	    padding: 60px 0px 350px 0px;
+>>>>>>> bank
 	    -webkit-border-radius: 8px;
 		-moz-border-radius: 8px;
 		-ms-user-select: none;
 		border-radius: 8px;
+<<<<<<< HEAD
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) !important;	
+	}
+	#login-left {
+		background-image: url("${pageContext.request.contextPath}/vec/ui/img/bg/bg_login_left.png");
+		background-repeat: no-repeat;
+		background-position: bottom left;
+		background-color: #f57c00;
+		height: 100%;
+		-webkit-border-radius: 8px 0px 0px 8px;
+		-moz-border-radius: 8px 0px 0px 8px;
+		-ms-user-select: none;
+		border-radius: 8px 0px 0px 8px;
+		font-family: pridien;
+		color: #ffffff;
+=======
 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) !important;
 		
+>>>>>>> bank
 	}
 	.login-title {
 		color: #000; /* #ff6e7b */
@@ -119,7 +219,10 @@
 	}
 	.login-box {
 		margin-top: 25px;
+<<<<<<< HEAD
+=======
 
+>>>>>>> bank
 	}
 	
 	.login-box a {
@@ -130,6 +233,28 @@
 		color: '#f57c00';
 		text-decoration: underline;
 	}
+<<<<<<< HEAD
+	.logo{
+	  	padding: 300px 0px 50px 20px;
+	  	-webkit-border-radius: 8px;
+		-moz-border-radius: 8px;
+		color: white; /* #ff6e7b */
+		font-family: pridi, pridien;
+		font-size: 1.8em;
+		font-weight: bold;
+		}
+	
+</style>
+
+<html:form action="/login" styleId="eduForm">
+<html:hidden property="mode"/>
+
+	<div class="container">
+		<div class="logo" >
+			<img src="https://www.gtt2004.com/img/GTT_WHITE.png" alt="" width="200" height="220">    
+			สวัสดีครับสมาชิกชมรมคนชอบ
+		</div>
+=======
 
 </style>
 
@@ -137,10 +262,23 @@
 <html:hidden property="mode"/>
 
 	<div class="container">
+>>>>>>> bank
 		<div class="row" style="margin-top:10px">
 			<div id="main-login">
 				<div class="col-sm-12" style="min-width: 300px;">
 					<div style="text-align: center;margin-top: 50px;">
+<<<<<<< HEAD
+						<%-- <img alt="" src="${pageContext.request.contextPath}/vec/ui/img/bg/logo-login.png" height="100"/> --%>
+					</div>
+					<div style="text-align: center;margin-top: 5px;">
+						<div class="login-title">LOGIN</div>
+						<div class="login-box">
+							<!-- <div style="margin-bottom: 5px;">เข้าใช้งานระบบ</div> -->
+							
+							<div class="form-group">
+								<div class="col-sm-10" style="margin: 0 auto;float: none;">
+									<html:text property="un" maxlength="75" styleClass="form-control" styleId="un" onkeypress="submitEnter();" placeHolder="ชื่อผู้ใช้งาน" />
+=======
 					</div>
 					<div style="text-align: center;margin-top: 5px;">
 
@@ -149,11 +287,16 @@
 							<div class="form-group">
 								<div class="col-sm-10" style="margin: 0 auto;float: none;">
 									<html:text property="un" maxlength="75" onkeypress="submitEnter();" styleClass="form-control" styleId="un" placeHolder="ชื่อผู้ใช้งาน" />
+>>>>>>> bank
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-10" style="margin: 0 auto;float: none;">
+<<<<<<< HEAD
+									<html:password property="pw" maxlength="75" styleClass="form-control" styleId="pw" onkeypress="submitEnter();" placeHolder="รหัสผ่าน"/>
+=======
 									<html:password property="pw" maxlength="75" onkeypress="submitEnter();" styleClass="form-control" styleId="pw" placeHolder="รหัสผ่าน"/>
+>>>>>>> bank
 								</div>
 							</div>
 							<div class="form-group">
@@ -161,8 +304,25 @@
 									<button type="button" class="btn btn-blue btn-sm" style="width:100%;" onclick="submitFormLogin();">เข้าสู่ระบบ</button>
 								</div>
 							</div>
+<<<<<<< HEAD
+							
+							<div class="form-group">
+							<bean:define id="msgErrorCheck" value="${not empty msgError}"/>
+							<logic:equal name="msgErrorCheck" value="true">
+								<div class="col-sm-10 fred" style="margin: 0 auto;float: none;">
+									<div class="alert alert-danger" style="padding: 5px;font-size: 12px;">${msgError}</div>
+								</div>
+							</logic:equal>
+							<logic:equal name="msgErrorCheck" value="false">
+								<div class="col-sm-10" style="margin: 0 auto;float: none;">&nbsp;</div>
+							</logic:equal>
+							</div>
+							
+							
+=======
 						
 								
+>>>>>>> bank
 						</div>
 					</div>
 				</div>

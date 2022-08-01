@@ -11,6 +11,8 @@ import com.core.dao.impl.CoreDaoImpl;
 import com.gtt.server.user.dao.RequestDao;
 import com.gtt.server.user.entity.Project;
 import com.gtt.server.user.entity.Request;
+import com.gtt.server.user.entity.User;
+
 import com.gtt.server.user.entity.RequestStatus;
 import com.gtt.server.user.entity.RequestType;
 import com.gtt.server.user.entity.User;
@@ -49,23 +51,23 @@ public class RequestDaoImpl extends CoreDaoImpl<Request, Serializable> implement
 				item.setId(Integer.parseInt(String.valueOf(obj[0])));
 				user.setId(Integer.parseInt(String.valueOf( obj[1])));
 				user.setNickname(String.valueOf(obj[2]));
-				item.setUser(user);
+				item.setId_user(user);
 				userproc.setId(Integer.parseInt(String.valueOf( obj[3])));
 
-				item.setUserproc(userproc);
+				item.setId_user_process(userproc);
 				reqS.setId(Integer.parseInt(String.valueOf(obj[4])));
-				reqS.setName(String.valueOf(obj[5]));
-				item.setRequest_status(reqS);
+				reqS.setStatus_name(String.valueOf(obj[5]));
+				item.setId_request_status(reqS);
 				reqT.setId(Integer.parseInt(String.valueOf( obj[6])));
-				reqT.setName((String.valueOf( obj[7])));
-				item.setRequest_type(reqT);
+				reqT.setType_name((String.valueOf( obj[7])));
+				item.setId_request_type(reqT);
 				project.setId(Integer.parseInt(String.valueOf(obj[8])));
-				project.setName(String.valueOf(obj[9]));
-				item.setProject(project);
-				item.setTitle(String.valueOf(obj[10]));
-				item.setRemark(String.valueOf(obj[11]));
-				item.setDate((Date) obj[12]);
-				item.setFile(String.valueOf(obj[13]));
+				project.setProject_name(String.valueOf(obj[9]));
+				item.setId_project(project);
+				item.setRequest_title(String.valueOf(obj[10]));
+				item.setRequest_remark(String.valueOf(obj[11]));
+				item.setRequest_date((Date) obj[12]);
+				item.setRequest_file(String.valueOf(obj[13]));
 
 				
 				results.add(item);
@@ -75,6 +77,27 @@ public class RequestDaoImpl extends CoreDaoImpl<Request, Serializable> implement
 		}
 		return results;
 	}
-
+	@Override
+	public List findRequestList(String id)throws DataAccessException{
+		String sql = "SELECT DISTINCT request.id_request,project.project_name,request.request_title,request.request_remark FROM request INNER JOIN project on request.id_project=project.id_project INNER JOIN user on project.id_customer=user.id_customer WHERE user.id_company='1' AND project.id_project='1'";
+		List<Request> results = new ArrayList<Request>();
+		Project projectresult = new Project();
+		List<Object[]> objectList = getSession().createSQLQuery(sql).list();
+		if(objectList != null && objectList.size()>0 ) {
+			for(Object[] obj : objectList){
+			Request item = new Request();
+			item.setId(Integer.parseInt(String.valueOf(obj[0])));
+			projectresult.setProject_name(String.valueOf(obj[1]));
+			item.setId_project(projectresult);
+			item.setRequest_title(String.valueOf(obj[2]));
+			item.setRequest_remark(String.valueOf(obj[3]));
+			results.add(item);
+			System.out.println(results);
+		}
+	}
+		return results;
+		
+	}
 	
 }
+

@@ -9,6 +9,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.core.entity.CoreEntity;
+
+
 @Entity
 @Table(name = "userproject")
 public class UserProject extends CoreEntity{
@@ -18,44 +21,30 @@ public class UserProject extends CoreEntity{
 	@Column(name = "id_user_project")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
 	@ManyToOne
 	@JoinColumn(name = "id_user")
-	private User user;
-	
+	private User id_user;
 	@ManyToOne
 	@JoinColumn(name = "id_project")
-	private Project project;
-	
-	public UserProject() {
-	}
-
-	public UserProject(int id) {
-		this.setId(id);
-	}
-
+	private Project id_project;
 	public int getId() {
 		return id;
 	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
-	public User getUser() {
-		return user;
+	public User getId_user() {
+		return id_user;
+	}
+	public void setId_user(User id_user) {
+		this.id_user = id_user;
+	}
+	public Project getId_project() {
+		return id_project;
+	}
+	public void setId_project(Project id_project) {
+		this.id_project = id_project;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
-	}
-
-	public Project getProject() {
-		return project;
-	}
-
-	public void setProject(Project project) {
-		this.project = project;
-	}
 	
 }

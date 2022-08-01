@@ -9,6 +9,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.core.entity.CoreEntity;
+
 
 @Entity
 @Table(name = "project")
@@ -19,51 +21,32 @@ public class Project extends CoreEntity{
 	@Column(name = "id_project")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
 	@ManyToOne
 	@JoinColumn(name = "id_customer")
-	private Company customer;
-	
+	private Company id_customer;
 	@Column(name = "project_name")
-	private String name;
-	
-	
-	public Project() {
-	}
-
-	public Project(int id) {
-		this.setId(id);
-	}
-
+	private String project_name;
 	public int getId() {
 		return id;
 	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
-	
-
-	public Company getCustomer() {
-		return customer;
+	public Company getId_customer() {
+		return id_customer;
 	}
-
-	public void setCustomer(Company customer) {
-		this.customer = customer;
+	public void setId_customer(Company id_customer) {
+		this.id_customer = id_customer;
 	}
-
-	public String getName() {
-		return name;
+	public String getProject_name() {
+		return project_name;
 	}
-
-	public void setName(String name) {
-		this.name = name;
+	public void setProject_name(String project_name) {
+		this.project_name = project_name;
 	}
-
 	
 
 	
 	
-	
+
 }

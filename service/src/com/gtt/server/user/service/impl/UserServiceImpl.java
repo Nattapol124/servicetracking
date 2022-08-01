@@ -10,20 +10,26 @@ import com.gtt.server.user.dao.UserDao;
 import com.gtt.server.user.entity.User;
 import com.gtt.server.user.service.UserService;
 
-public class UserServiceImpl extends CoreServiceImpl<User, Serializable> implements UserService{
+public class UserServiceImpl 
+extends CoreServiceImpl<User,Serializable>
+implements UserService
+{
 	private UserDao userDao;
-	
 	public UserServiceImpl(UserDao userDao) {
 		super(userDao);
-		
 		this.userDao = userDao;
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public List<User> getLogin(String username, String password) {
+	public List getLogin(String username, String password) throws DataAccessException {
 		return userDao.findLogin(username, password);
 	}
+	@Override
+	public List getUserList(String company) throws DataAccessException {
+		return userDao.findUserList(company);
+	}
 
-	
+
 
 }

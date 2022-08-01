@@ -97,7 +97,7 @@ public class IndexAction extends CoreAction {
 		try {
 			DynaActionForm dynaForm = (DynaActionForm) form;
 			User user = (User) getObjectSession(request, SESSION_USER);
-			List<Project> projectList = projectService.getProject(String.valueOf(user.getCustomer().getId()), String.valueOf(user.getId()));
+			List<Project> projectList = projectService.getProject(String.valueOf(user.getId_customer().getId()), String.valueOf(user.getId()));
 			dynaForm.set("projectList", projectList);
 			request.setAttribute("projectList", projectList);
 		} catch (Exception e) {
@@ -110,11 +110,11 @@ public class IndexAction extends CoreAction {
 		try {
 			DynaActionForm dynaForm = (DynaActionForm) form;
 			User user = (User) getObjectSession(request, SESSION_USER);
-			List<Request> requestList = requestService.getReqByCustomer(String.valueOf(user.getCustomer().getId()));
+			List<Request> requestList = requestService.getReqByCustomer(String.valueOf(user.getId_customer().getId()));
 			dynaForm.set("resultList", requestList);;
 			request.setAttribute("resultList", requestList);
 			
-			List<Project> projectList = projectService.getProject(String.valueOf(user.getCustomer().getId()), String.valueOf(user.getId()));
+			List<Project> projectList = projectService.getProject(String.valueOf(user.getId_customer().getId()), String.valueOf(user.getId()));
 			dynaForm.set("projectList", projectList);
 			request.setAttribute("projectList", projectList);
 		} catch (Exception e) {
@@ -132,19 +132,19 @@ public class IndexAction extends CoreAction {
 			Request entity = null;
 			
 			User user = (User) getObjectSession(request, SESSION_USER);
-			entity.setUser(user);
+			entity.setId_user(user);
 			RequestStatus status = new RequestStatus();
 			status.setId(1);
-			entity.setRequest_status(null);
+			entity.setId_request_status(null);
 			
 			Project project = new Project();
-			project.setName(dynaForm.getString("project"));
-			entity.setProject(null);
+			project.setProject_name(dynaForm.getString("project"));
+			entity.setId_project(null);
 			
-			entity.setTitle(dynaForm.getString("title"));
-			entity.setRemark(dynaForm.getString("remark"));
-			entity.setDate(null);
-			entity.setFile(dynaForm.getString("file"));
+			entity.setRequest_title(dynaForm.getString("title"));
+			entity.setRequest_remark(dynaForm.getString("remark"));
+			entity.setRequest_date(null);
+			entity.setRequest_file(dynaForm.getString("file"));
 			entity.setCreateBy(user.getUsername());
 			entity.setCreateDate(DateTimeUtil.getSystemDate());
 			
@@ -171,9 +171,9 @@ public class IndexAction extends CoreAction {
 			
 			User user = (User) getObjectSession(request, SESSION_USER);
 			Request req = requestService.getItem(Integer.parseInt(dynaForm.getString("id")));
-			req.setTitle(dynaForm.getString("title"));
-			req.setFile(dynaForm.getString("file"));
-			req.setRemark(dynaForm.getString("remark"));
+			req.setRequest_title(dynaForm.getString("title"));
+			req.setRequest_file(dynaForm.getString("file"));
+			req.setRequest_remark(dynaForm.getString("remark"));
 			req.setUpdateBy(user.getUsername());
 			req.setUpdateDate(DateTimeUtil.getSystemDate());
 		} catch (Exception e) {

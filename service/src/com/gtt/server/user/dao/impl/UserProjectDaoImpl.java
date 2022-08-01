@@ -1,13 +1,15 @@
 package com.gtt.server.user.dao.impl;
 
 import java.io.Serializable;
+
+import com.core.dao.impl.CoreDaoImpl;
+import com.gtt.server.user.dao.UserProjectDao;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.dao.DataAccessException;
 
-import com.core.dao.impl.CoreDaoImpl;
-import com.gtt.server.user.dao.UserProjectDao;
 import com.gtt.server.user.entity.Project;
 import com.gtt.server.user.entity.UserProject;
 
@@ -15,8 +17,8 @@ public class UserProjectDaoImpl extends CoreDaoImpl<UserProject, Serializable> i
 
 	public UserProjectDaoImpl(Class<UserProject> entityClass) {
 		super(entityClass);
-		// TODO Auto-generated constructor stub
 	}
+
 
 	@Override
 	public List getProjectById(String userId) throws DataAccessException {
@@ -30,14 +32,14 @@ public class UserProjectDaoImpl extends CoreDaoImpl<UserProject, Serializable> i
 		if(objectList != null && objectList.size()>0) {
 			for(Object[] obj : objectList) {
 				Project project = new Project();
-				UserProject userProject = new UserProject(Integer.parseInt(String.valueOf(obj[0])));
-				project.setName(String.valueOf(obj[1]));
-				userProject.setProject(project);
+				UserProject userProject = new UserProject();
+				userProject.setId(Integer.parseInt(String.valueOf(obj[0])));
+				project.setProject_name(String.valueOf(obj[1]));
+				userProject.setId_project(project);
 				results.add(userProject);
 			}
 			
 		}
 		return results;
 	}
-	
 }

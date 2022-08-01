@@ -7,6 +7,7 @@ import com.gtt.server.user.dao.CompanyDao;
 import com.gtt.server.user.entity.Company;
 import com.gtt.server.user.service.CompanyService;
 
+
 public class CompanyServiceImpl extends CoreServiceImpl<Company, Serializable> implements CompanyService{
 	private CompanyDao companyDao;
 	
@@ -15,4 +16,5 @@ public class CompanyServiceImpl extends CoreServiceImpl<Company, Serializable> i
 		
 		this.companyDao = companyDao;
 	}
+
 }

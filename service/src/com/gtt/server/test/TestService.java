@@ -23,6 +23,7 @@ import com.gtt.server.user.service.UserTypeService;
 import junit.framework.TestCase;
 
 public class TestService extends TestCase {
+
 	private CompanyService companyService = null;
 	private CompanyTypeService companyTypeService = null;
 	
