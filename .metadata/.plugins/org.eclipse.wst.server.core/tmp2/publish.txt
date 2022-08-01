@@ -1,5 +1,5 @@
 #Tomcat publish data
-#Fri Jul 29 15:29:54 ICT 2022
+#Mon Aug 01 09:04:02 ICT 2022
 org.eclipse.jst.j2ee.server\:core_struts=WEB-INF/lib/core_struts.jar
 org.eclipse.jst.j2ee.server\:service=WEB-INF/lib/service.jar
 org.eclipse.jst.j2ee.server\:core_service=WEB-INF/lib/core_service.jar
