@@ -39,23 +39,6 @@ public class IndexAction extends CoreAction {
 		return mapping.findForward("Index");
 	}
 	
-	public ActionForward getRequest(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
-		try {
-			DynaActionForm dynaForm = (DynaActionForm) form;
-			User user = (User) getObjectSession(request, SESSION_USER);
-			List<Request> requestList = requestService.getReqByUser(String.valueOf(user.getId()));
-			dynaForm.set("resultList", requestList);;
-			request.setAttribute("resultList", requestList);
-			
-			List<Project> projectList = projectService.getProject(String.valueOf(user.getCustomer().getId()), String.valueOf(user.getId()));
-			dynaForm.set("projectList", projectList);
-			request.setAttribute("projectList", projectList);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		return mapping.findForward("Request");
-	}
 	
 	public ActionForward request(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		try {
@@ -66,6 +49,17 @@ public class IndexAction extends CoreAction {
 		}
 
 		return mapping.findForward("Request");
+	}
+	
+	public ActionForward user(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+		try {
+			DynaActionForm dynaForm = (DynaActionForm) form;
+			resetForm(dynaForm, mapping, request);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return mapping.findForward("UserDetail");
 	}
 
 	public ActionForward login(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -111,6 +105,23 @@ public class IndexAction extends CoreAction {
 		}
 		
 		return mapping.findForward("AddRequest");
+	}
+	public ActionForward getRequest(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+		try {
+			DynaActionForm dynaForm = (DynaActionForm) form;
+			User user = (User) getObjectSession(request, SESSION_USER);
+			List<Request> requestList = requestService.getReqByCustomer(String.valueOf(user.getCustomer().getId()));
+			dynaForm.set("resultList", requestList);;
+			request.setAttribute("resultList", requestList);
+			
+			List<Project> projectList = projectService.getProject(String.valueOf(user.getCustomer().getId()), String.valueOf(user.getId()));
+			dynaForm.set("projectList", projectList);
+			request.setAttribute("projectList", projectList);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return mapping.findForward("Request");
 	}
 	
 	
@@ -171,6 +182,10 @@ public class IndexAction extends CoreAction {
 		
 		return mappingForward(mapping, request, "mode", "getRequest", "index.htm", "eduForm", null);
 	}
+	
+	
+	
+	
 	
 	public UserService getUserService() {
 		return userService;

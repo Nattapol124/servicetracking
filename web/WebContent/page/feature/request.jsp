@@ -12,10 +12,6 @@
 <body>
 <script type="text/javascript">
 
-	function submitId(mode) {
-		document.forms[0].mode.value = mode;
-	    document.forms[0].submit();
-	}
 	
 	function add(){
 		document.forms[0].mode.value = "requestBtn";
@@ -24,8 +20,8 @@
 	
 	function edit(id){
 		  document.forms[0].mode.value = "editRequest";
-		  	document.forms[0].id.value = id;
-		    document.forms[0].submit();
+		  document.forms[0].id.value = id;
+		  document.forms[0].submit();
 	}
 	
 	function del(id){
@@ -46,6 +42,26 @@
 			    
 			  })
 	}
+	
+	function save(){
+		Swal.fire({
+			  title: 'Are you sure?',
+			  text: "You want to save change!",
+			  icon: 'warning',
+			  showCancelButton: true,
+			  confirmButtonColor: '#3085d6',
+			  cancelButtonColor: '#d33',
+			  confirmButtonText: 'Yes'
+			}).then((result) => {
+				if(result.isConfirmed){
+					
+
+				}
+			    
+			  })
+	}
+	
+
 	
 </script>
 
@@ -83,7 +99,6 @@ h2{
 						      <th class = "text-center">หัวข้อ</th>
 						      <th class = "text-center">ผู้แจ้งเรื่อง</th>
 						      
-						      <th class = "text-center">ผู้รับผิดชอบ</th>
 						      <th class = "text-center">สถานะ</th>
 <!-- 						      <th>ประเภท</th> -->
 <!-- 						      <th>โครงการ</th> -->
@@ -100,25 +115,24 @@ h2{
 								<td align="center"><%= index+1 %></td>
 								<td align="center">${item.title }</td>
 								<td align="center">${item.user.nickname }</td>
-								<td align="center">${item.userproc.id }</td>
 								<c:if test="${item.request_status.id eq '1' }">
-									<td align="center"><a href="#" class="btn btn-warning" data-toggle="modal"  data-target="#exampleModal">${item.request_status.name }</a></td>
+									<td align="center"><a href="#" class="btn btn-warning" data-toggle="modal"  data-target="#exampleModal${item.id}">${item.request_status.name }</a></td>
 								</c:if>
 								
 								<c:if test="${item.request_status.id eq '2' }">
-									<td align="center"><a href="#" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">${item.request_status.name }</a></td>
+									<td align="center"><a href="#" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal${item.id}">${item.request_status.name }</a></td>
 								</c:if>
 								
 								<c:if test="${item.request_status.id eq '3' }">
-									<td align="center"><a href="#" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">${item.request_status.name }</a></td>
+									<td align="center"><a href="#" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal${item.id}">${item.request_status.name }</a></td>
 								</c:if>
 								
 								<c:if test="${item.request_status.id eq '4' }">
-									<td align="center"><a href="#" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">${item.request_status.name }</a></td>
+									<td align="center"><a href="#" class="btn btn-success" data-toggle="modal" data-target="#exampleModal${item.id}">${item.request_status.name }</a></td>
 								</c:if>
 								
 								<c:if test="${item.request_status.id eq '5' }">
-									<td align="center"><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">${item.request_status.name }</a></td>
+									<td align="center"><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal${item.id}">${item.request_status.name }</a></td>
 								</c:if>
 								
 								
@@ -130,33 +144,34 @@ h2{
 <%-- 								<td>${item.file }</td> --%>
 								<c:if test="${item.request_status.id eq '1' }">
 									<td>
-										<button type="button" onclick="edit('${item.id}')" class="btn btn-primary btn-xs">edit</button>
+										<button type="button" data-toggle="modal" data-target="#editModal${item.id}" class="btn btn-primary btn-xs">edit</button>
 										<button type="button" onclick="del('${item.id}')" class="btn btn-danger btn-xs">delete</button>
 									</td>
 								
 								</c:if>
 								<c:if test="${item.request_status.id ne '1' }">
 									<td>
-										<button type="button" onclick="" disabled class="btn btn-primary btn-xs">edit</button>
-										<button type="button" onclick="" disabled class="btn btn-danger btn-xs">delete</button>
+										<button type="button" onclick=""  class="btn btn-primary btn-xs" disabled>edit</button>
+										<button type="button" onclick=""  class="btn btn-danger btn-xs" disabled>delete</button>
 									</td>
 								</c:if>
 								</tr>
-								<!-- Modal -->
-												<div class="modal fade" id="exampleModal" tabindex="-1"
+												<div class="modal fade" id="exampleModal${item.id}" tabindex="-1"
 													role="dialog" aria-labelledby="exampleModalLabel"
 													aria-hidden="true">
 													<div class="modal-dialog" role="document">
 														<div class="modal-content">
 															<div class="modal-header">
-																<h5 class="modal-title" id="exampleModalLabel">รายละเอียด</h5>
+																<h5 class="modal-title" id="exampleModalLabel">รายละเอียด : ${item.title }</h5>
 															</div>
 															<div class="modal-body">
+
 																<p>ประเภท : ${item.request_type.name }</p>
 																<p>โครงการ : ${item.project.name }</p>
 																<p>รายละเอียด : ${item.remark }</p>
 																<p>วันที่ส่งคำร้อง : ${item.date }</p>
 																<p>ไฟล์ : ${item.file }</p>
+
 															</div>
 															<div class="modal-footer">
 																<button type="button" class="btn btn-primary"
@@ -165,27 +180,53 @@ h2{
 														</div>
 													</div>
 												</div>
-												<div class="row">
-											</logic:iterate>
+												
+												<div class="modal fade" id="editModal${item.id}" tabindex="-1"
+													role="dialog" aria-labelledby="exampleModalLabel"
+													aria-hidden="true">
+													<div class="modal-dialog" role="document">
+														<div class="modal-content">
+															<div class="modal-header">
+																<h5 class="modal-title" id="exampleModalLabel">แก้ไข : ${item.title }</h5>
+															</div>
+															<div class="modal-body">
+																<label>หัวข้อ : </label>
+																<input type="text" class="form-control" value="${item.title }" required>
+																
+																<label>โครงการ : </label>
+																<html:select property="project" styleClass="form-control">	
+																	<html:optionsCollection property="projectList" value="id" label="name" />
+																</html:select>
+																
+																<label>รายละเอียด : </label>
+																<input type="text"  class="form-control" value="${item.remark }" required>
+																<label>วันที่ส่งคำร้อง : </label>
+																<input type="Date"  class="form-control" value="${item.date }" required>
+																<label>ไฟล์ : </label>
+																<input type="file"  class="form-control" value="${item.file }" required>
+
+															</div>
+															<div class="modal-footer">
+																<button type="button" class="btn btn-primary" onclick="save()">Save Change</button>
+																<button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
+															</div>
+														</div>
+													</div>
+												</div>
+
+								</logic:iterate>
 						    	
 						  </tbody>
 						</table>
 					</logic:notEmpty>
 					</logic:present>
 					</div>
-<!-- 					<form> -->
-<!-- 						<input class="form-control" style="width:20%"" list="projectList" name="project" id="project"> -->
-<!-- 						<datalist id="projectList"> -->
-<%-- 								<option>${project.name }</option> --%>
-						
-<!-- 						</datalist> -->
-<!-- 					</form> -->
-					
 					<button class="btn-blue btn-sm" onclick="add()">รายงานปัญหา</button>
 				</div>
 				
 			</div>
 		</div>
+	
 	</section>
 	
 

@@ -21,11 +21,16 @@
 			  confirmButtonText: 'Yes'
 			}).then((result) => {
 				if(result.isConfirmed){
-					document.forms[0].action = 'index.htm?mode=index';
+					document.forms[0].mode.value = 'index';
 					document.forms[0].submit();	
 				}
 			    
 			  })
+	}
+	
+	function detail(){
+		document.forms[0].mode.value = "user";
+		document.forms[0].submit();
 	}
 </script>
 
@@ -52,10 +57,10 @@
 		        <ul class="nav pull-right top-menu">
 					<!-- user login dropdown start-->
 					<li class="dropdown">
-						<a href="#" style="z-index: 900;text-align: right;">
+						<a href="#" onclick="detail()" style="z-index: 900;text-align: right;">
 							<span class="username">${SSUser.firstname}</span>
 						</a>
-						<a href="#" style="font-size:15px;font-family: pridi;top: -16px;margin-bottom: -19px;z-index: 100;">
+						<a href="#" onclick="detail()" style="font-size:15px;font-family: pridi;top: -16px;margin-bottom: -19px;z-index: 100;">
 							${SSUser.userPosition.name}
 						</a>
 					</li>

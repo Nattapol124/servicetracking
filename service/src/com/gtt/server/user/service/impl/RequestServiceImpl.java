@@ -21,7 +21,7 @@ public class RequestServiceImpl extends CoreServiceImpl<Request, Serializable> i
 	}
 	
 	@Override
-	public List getReqByUser(String userId) throws DataAccessException {
-		return requestDao.findReqByUser(userId);
+	public List getReqByCustomer(String customerId) throws DataAccessException {
+		return requestDao.findReqByCustomer(customerId);
 	}
 }

@@ -10,5 +10,5 @@ import com.gtt.server.user.entity.Request;
 
 public interface RequestService extends CoreService<Request, Serializable>{
 
-	public List getReqByUser(String userId) throws DataAccessException;
+	public List getReqByCustomer(String customerId) throws DataAccessException;
 }

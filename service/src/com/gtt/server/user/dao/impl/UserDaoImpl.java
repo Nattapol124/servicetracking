@@ -20,7 +20,7 @@ public class UserDaoImpl extends CoreDaoImpl<User, Serializable> implements User
 	
 	@Override
 	public List<User> findLogin(String username, String password) throws DataAccessException {
-		String sql = "SELECT user.id_user, userposition.position_name, user.id_customer, user.username, user.password, user.user_firstname FROM user "
+		String sql = "SELECT user.id_user, userposition.position_name, user.id_customer, user.username, user.password, user.user_firstname, user.user_lastname, user.user_nickname, user.user_phone, user.user_email FROM user "
 				+ "inner join userposition on user.id_user_position = userposition.id_user_position "
 				+ "WHERE username='"+username+"' AND password='"+password+"'";
 		  List<User> results = new ArrayList<User>();
@@ -37,11 +37,15 @@ public class UserDaoImpl extends CoreDaoImpl<User, Serializable> implements User
 		   item.setUsername(String.valueOf(obj[3]));
 		   item.setPassword(String.valueOf(obj[4]));
 		   item.setFirstname(String.valueOf(obj[5]));
+		   item.setLastname(String.valueOf(obj[6]));
+		   item.setNickname(String.valueOf(obj[7]));
+		   item.setPhone(String.valueOf(obj[8]));
+		   item.setEmail(String.valueOf(obj[9]));
 		   results.add(item);
 		  }
 		 }
 		  return results;
-		}
+		}	
 	
 	
 }

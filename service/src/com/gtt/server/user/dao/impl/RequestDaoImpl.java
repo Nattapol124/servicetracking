@@ -22,7 +22,7 @@ public class RequestDaoImpl extends CoreDaoImpl<Request, Serializable> implement
 	}
 	
 	@Override
-	public List findReqByUser(String userId) throws DataAccessException {	
+	public List findReqByCustomer(String customerId) throws DataAccessException {	
 		
 		String sql = "select request.id_request, user.id_user, user.user_nickname, request.id_user_process"
 				+ ", requeststatus.id_request_status, requeststatus.status_name, requesttype.id_request_type"
@@ -32,7 +32,7 @@ public class RequestDaoImpl extends CoreDaoImpl<Request, Serializable> implement
 				+ "inner join requeststatus on request.id_request_status = requeststatus.id_request_status "
 				+ "inner join requesttype on request.id_request_type = requesttype.id_request_type "
 				+ "inner join project on request.id_project = project.id_project "
-				+ "where request.id_user ="+userId;
+				+ "where user.id_customer ="+customerId;
 		
 		List<Request> results =new ArrayList<Request>();
 		List<Object[]> objectList = getSession().createSQLQuery(sql).list();

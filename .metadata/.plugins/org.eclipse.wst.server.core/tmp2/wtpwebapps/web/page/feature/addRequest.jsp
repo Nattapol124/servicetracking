@@ -51,6 +51,7 @@
 		<section id="main-content">
 		<section class="wrapper">
          <div>
+         	<h2>รายงานปัญหา</h2>
          	<label>ชื่อโครงการ</label>
         	<html:select property="project" styleClass="form-control">	
         		<option value="" disabled selected>Select your project</option>
