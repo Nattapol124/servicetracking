@@ -5,7 +5,11 @@
 
 		<redirect-home url="http://localhost/" />
 
+<<<<<<< HEAD
 		<path-default upload="/upload/" view="http://localhost" path="/upload/" />
+=======
+		<path-default upload="/upload/" view="http://localhost/" path="/upload/" />
+>>>>>>> bank
 
 	</nameConstant>
 </constant>

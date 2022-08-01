@@ -1,4 +1,8 @@
 package com.gtt.server.user.entity;
+<<<<<<< HEAD
+=======
+
+>>>>>>> bank
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,17 +12,24 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+<<<<<<< HEAD
 import com.core.entity.CoreEntity;
 
 @Entity
 @Table(name = "user")
 public class User extends CoreEntity {
+=======
+@Entity
+@Table(name = "user")
+public class User extends CoreEntity{
+>>>>>>> bank
 	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@Column(name = "id_user")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
+<<<<<<< HEAD
 	@ManyToOne
 	@JoinColumn(name = "id_user_type")
 	private UserType id_user_type;
@@ -57,6 +68,57 @@ public class User extends CoreEntity {
 	
 	public User(int id) {
 		this.id = id;
+=======
+	
+	@ManyToOne
+	@JoinColumn(name = "id_user_type")
+	private UserType userType;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_user_prefix")
+	private UserPrefix userPrefix;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_user_position")
+	private UserPosition userPosition;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_company")
+	private Company company;
+	
+	
+	@Column(name = "user_nickname")
+	private String nickname;
+	
+	@Column(name = "user_firstname")
+	private String firstname;
+	
+	@Column(name = "user_lastname")
+	private String lastname;
+	
+	@Column(name = "user_phone")
+	private String phone;
+	
+	@Column(name = "user_email")
+	private String email;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_customer")
+	private Company customer;
+	
+	@Column(name = "username")
+	private String username;
+	
+	@Column(name = "password")
+	private String password;
+	
+	
+	public User() {
+	}
+
+	public User(int id) {
+		this.setId(id);
+>>>>>>> bank
 	}
 
 	public int getId() {
@@ -67,6 +129,7 @@ public class User extends CoreEntity {
 		this.id = id;
 	}
 
+<<<<<<< HEAD
 	public UserType getId_user_type() {
 		return id_user_type;
 	}
@@ -97,6 +160,54 @@ public class User extends CoreEntity {
 
 	public void setId_company(Company id_company) {
 		this.id_company = id_company;
+=======
+	public UserType getUserType() {
+		return userType;
+	}
+
+	public void setUserType(UserType userType) {
+		this.userType = userType;
+	}
+
+	public UserPrefix getUserPrefix() {
+		return userPrefix;
+	}
+
+	public void setUserPrefix(UserPrefix userPrefix) {
+		this.userPrefix = userPrefix;
+	}
+
+	public String getNickname() {
+		return nickname;
+	}
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+
+	public String getFirstname() {
+		return firstname;
+	}
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+>>>>>>> bank
 	}
 
 	public String getUsername() {
@@ -115,6 +226,7 @@ public class User extends CoreEntity {
 		this.password = password;
 	}
 
+<<<<<<< HEAD
 	public String getNickname() {
 		return nickname;
 	}
@@ -161,14 +273,49 @@ public class User extends CoreEntity {
 
 	public void setId_customer(Company id_customer) {
 		this.id_customer = id_customer;
+=======
+	public UserPosition getUserPosition() {
+		return userPosition;
+	}
+
+	public void setUserPosition(UserPosition userPosition) {
+		this.userPosition = userPosition;
+	}
+
+	public Company getCompany() {
+		return company;
+	}
+
+	public void setCompany(Company company) {
+		this.company = company;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public Company getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Company customer) {
+		this.customer = customer;
+>>>>>>> bank
 	}
 
 	
 
 	
 	
+<<<<<<< HEAD
 	
 	
 	
 	
+=======
+>>>>>>> bank
 }

@@ -37,9 +37,14 @@
 			<param-name>config</param-name>
 			<param-value>
 				/WEB-INF/struts-config.xml,
+<<<<<<< HEAD
 				/WEB-INF/conf/login-struts-config.xml,
 				/WEB-INF/conf/master-struts-config.xml,
 				
+=======
+<!-- 				/WEB-INF/conf/site-struts-config.xml, -->
+				/WEB-INF/conf/index-struts-config.xml,
+>>>>>>> bank
 			</param-value>
 		</init-param>
 		<init-param>
@@ -106,7 +111,10 @@
 			<taglib-location>/WEB-INF/tld/encoding.tld</taglib-location>
 		</taglib>
 	</jsp-config>
+<<<<<<< HEAD
 
+=======
+>>>>>>> bank
 	<error-page>
 		<error-code>500</error-code>
 		<location>/500.jsp</location>

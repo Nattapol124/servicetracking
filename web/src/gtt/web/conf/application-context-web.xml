@@ -10,6 +10,7 @@
        	http://www.springframework.org/schema/tx/spring-tx.xsd
        	http://www.springframework.org/schema/aop 
        	http://www.springframework.org/schema/aop/spring-aop.xsd">
+<<<<<<< HEAD
 
 	<bean name="/login" class="gtt.web.action.LoginAction">
 		<property name="UserService">
@@ -33,5 +34,46 @@
 	
 
 	
+=======
+       	
+    <bean name="/index" class="gtt.web.action.IndexAction">
+		<property name="userService">
+			<ref bean="userService" />
+		</property>
+		<property name="requestService">
+			<ref bean="requestService" />
+		</property>
+		<property name="projectService">
+			<ref bean="projectService" />
+		</property>
+		
+
+	</bean>
+	
+	
+	
+
+	
+
+	<!-- <bean name="/site" class="gtt.web.action.SiteAction">
+		
+		
+	</bean>
+
+	<bean name="/admin" class="sme.web.action.AdminAction">
+		<property name="accountService">
+			<ref bean="accountService" />
+		</property>
+		<property name="prefixService">
+			<ref bean="prefixService" />
+		</property>
+		<property name="organizationService">
+			<ref bean="organizationService" />
+		</property>
+		<property name="courseService">
+			<ref bean="courseService" />
+		</property>
+	</bean> -->
+>>>>>>> bank
 
 </beans>

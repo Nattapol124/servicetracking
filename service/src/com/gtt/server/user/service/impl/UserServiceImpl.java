@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.dao.DataAccessException;
 
+<<<<<<< HEAD
 import com.core.dao.CoreDao;
 import com.core.service.impl.CoreServiceImpl;
 import com.gtt.server.user.dao.UserDao;
@@ -33,4 +34,27 @@ implements UserService
 	}
 
 	
+=======
+import com.core.service.impl.CoreServiceImpl;
+import com.gtt.server.user.dao.UserDao;
+import com.gtt.server.user.entity.User;
+import com.gtt.server.user.service.UserService;
+
+public class UserServiceImpl extends CoreServiceImpl<User, Serializable> implements UserService{
+	private UserDao userDao;
+	
+	public UserServiceImpl(UserDao userDao) {
+		super(userDao);
+		
+		this.userDao = userDao;
+	}
+
+	@Override
+	public List<User> getLogin(String username, String password) {
+		return userDao.findLogin(username, password);
+	}
+
+	
+
+>>>>>>> bank
 }

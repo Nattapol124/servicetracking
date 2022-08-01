@@ -8,6 +8,7 @@
 	<meta name="author" content="">
 	<meta name="keyword" content="">
 	
+<<<<<<< HEAD
 	<title>รายงานปัญหา</title>
 	
 	
@@ -40,6 +41,13 @@
 	<link href="${pageContext.request.contextPath}/ui/css/bootstrap-theme.css" rel="stylesheet"/>
 	<!-- CSS only -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+=======
+	<title>Service Tracking</title>
+
+	<!-- Bootstrap CSS -->
+	<link href="${pageContext.request.contextPath}/ui/css/bootstrap.min.css" rel="stylesheet"/>
+	<link href="${pageContext.request.contextPath}/ui/css/bootstrap-theme.css" rel="stylesheet"/>
+>>>>>>> bank
 	<!-- font -->
 	<link href="${pageContext.request.contextPath}/ui/fonts/webfont.css" rel="stylesheet" />
 	<!-- font icon -->
@@ -71,8 +79,12 @@
 	<script src="${pageContext.request.contextPath}/ui/js/jquery.nicescroll.js" type="text/javascript"></script>
 	<!-- custom select -->
 	<script src="${pageContext.request.contextPath}/ui/js/jquery.customSelect.min.js"></script>
+<<<<<<< HEAD
 	<!-- JavaScript Bundle with Popper -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+=======
+	
+>>>>>>> bank
 	<!--custome script for all page-->
 	<script src="${pageContext.request.contextPath}/ui/js/scripts.js"></script>
 	
@@ -81,7 +93,10 @@
 	<script src="${pageContext.request.contextPath}/ui/js/jquery.placeholder.min.js"></script>
 	<script src="${pageContext.request.contextPath}/ui/js/jquery.slimscroll.min.js"></script>
 	<script src="${pageContext.request.contextPath}/ui/js/bootbox.js"></script>
+<<<<<<< HEAD
 
+=======
+>>>>>>> bank
 	<script src="${pageContext.request.contextPath}/ui/js/bootstrap-select.js"></script>
 	<script src="${pageContext.request.contextPath}/ui/js/bootstrap-typeahead.js"></script>
 	

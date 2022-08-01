@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+<<<<<<< HEAD
 import com.core.entity.CoreEntity;
 
 @Entity
@@ -14,11 +15,18 @@ import com.core.entity.CoreEntity;
 public class UserType extends CoreEntity{
 	
 	private static final long serialVersionUID = 1L;
+=======
+@Entity
+@Table(name = "usertype")
+public class UserType extends CoreEntity{
+	private static final long serialVeraionUID = 1L;
+>>>>>>> bank
 	
 	@Id
 	@Column(name = "id_user_type")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
+<<<<<<< HEAD
 	@Column(name = "type_name")
 	private String type_name;
 
@@ -26,6 +34,19 @@ public class UserType extends CoreEntity{
 		
 	}
 
+=======
+	
+	@Column(name = "type_name")
+	private String name;
+
+	public UserType() {
+	}
+
+	public UserType(int id) {
+		this.setId(id);
+	}
+	
+>>>>>>> bank
 	public int getId() {
 		return id;
 	}
@@ -34,6 +55,7 @@ public class UserType extends CoreEntity{
 		this.id = id;
 	}
 
+<<<<<<< HEAD
 	public String getType_name() {
 		return type_name;
 	}
@@ -44,5 +66,15 @@ public class UserType extends CoreEntity{
 	
 
 	
+=======
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+>>>>>>> bank
 	
 }

@@ -1,12 +1,24 @@
+<<<<<<< HEAD
 	<!DOCTYPE html>
+=======
+<!DOCTYPE html>
+>>>>>>> bank
 <%@page contentType="text/html; charset=utf-8"%>
 <%@taglib uri="/tld/struts-html.tld" prefix="html"%>
 <%@taglib uri="/tld/struts-logic.tld" prefix="logic"%>
 <%@taglib uri="/tld/struts-bean.tld" prefix="bean"%>
 <%@taglib uri="/tld/c.tld" prefix="c"%>
+<<<<<<< HEAD
 <%@ include file="/page/inc_header_script.jsp"%>
 
 
+=======
+
+<%@ include file="/page/inc_header_script.jsp"%>
+
+
+
+>>>>>>> bank
 <body>
 
 <script language="javascript" type="text/javascript">
@@ -21,7 +33,11 @@
 			  },
 			  success: function() {}
 		});
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> bank
 		$("#eduForm").validate({
 			rules: {
 				un: "required",
@@ -39,6 +55,7 @@
 	      	submitHandler: function(form) {
 	      		document.forms[0].mode.value = 'login';
 		   	 	document.forms[0].submit();
+<<<<<<< HEAD
 			}
 		});
 		
@@ -81,11 +98,48 @@
 
 
 <style type="text/css">
+=======
+			   	
+			}
+		});
+		
+// 	i	$('#un').focus();
+	});
+	
+	function submitEnter() {
+		if (checkKeyEnter() == true) submitFormLogin();
+	}
+	
+	function checkKeyEnter(){
+		   if(event.keyCode==13) return true;
+		}
+	
+
+	function submitFormLogin() {
+		$("#eduForm").submit();
+		
+// 		document.forms[0].action = 'index.htm?mode=login';
+// 		 	document.forms[0].submit();
+	}
+	
+	
+	
+</script>
+<style type="text/css">
+
+	
+	img{
+		left : 100px;
+		position: absolute;
+		top: 150px;
+	}
+>>>>>>> bank
 	html,body{
 	    position: relative;
 	    height: 100%;
 	}
 	body {
+<<<<<<< HEAD
 	
 	
 	position: center;
@@ -107,10 +161,37 @@
 	   	top:240px;
 	    background-color: #ffffff;
 	    padding: 5px 0px 0px 0px;
+=======
+		background: linear-gradient(45.3deg, #40408D 0%, #548FC5 96.5%), linear-gradient(0deg, #40408D, #40408D), linear-gradient(0deg, #CCCCFE, #CCCCFE), linear-gradient(0deg, #302988, #302988), linear-gradient(0deg, #232378, #232378), linear-gradient(180deg, rgba(197, 84, 146, 0.5) 2.31%, rgba(77, 33, 150, 0.536563) 41.85%, rgba(0, 0, 153, 0.56) 83.08%);
+		
+	}
+	label{
+		color: #fff	; /* #ff6e7b */
+		font-family: pridi, pridien;
+		font-weight: bold;
+		position: absolute;
+		left: 110px;
+		top : 450px;
+		font-sizet : 2vw;
+		
+	}
+		
+	#main-login {
+		position: absolute;
+		right:20px;
+		min-width: 400px;
+		min-height: 350px; 
+		width: 50%;
+		height: 25%;
+	    margin: 40px auto 20px;
+	    background-color: #ffffff;
+	    padding: 60px 0px 350px 0px;
+>>>>>>> bank
 	    -webkit-border-radius: 8px;
 		-moz-border-radius: 8px;
 		-ms-user-select: none;
 		border-radius: 8px;
+<<<<<<< HEAD
 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) !important;	
 	}
 	#login-left {
@@ -125,6 +206,10 @@
 		border-radius: 8px 0px 0px 8px;
 		font-family: pridien;
 		color: #ffffff;
+=======
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) !important;
+		
+>>>>>>> bank
 	}
 	.login-title {
 		color: #000; /* #ff6e7b */
@@ -134,6 +219,10 @@
 	}
 	.login-box {
 		margin-top: 25px;
+<<<<<<< HEAD
+=======
+
+>>>>>>> bank
 	}
 	
 	.login-box a {
@@ -144,6 +233,7 @@
 		color: '#f57c00';
 		text-decoration: underline;
 	}
+<<<<<<< HEAD
 	.logo{
 	  	padding: 300px 0px 50px 20px;
 	  	-webkit-border-radius: 8px;
@@ -164,10 +254,20 @@
 			<img src="https://www.gtt2004.com/img/GTT_WHITE.png" alt="" width="200" height="220">    
 			สวัสดีครับสมาชิกชมรมคนชอบ
 		</div>
+=======
+
+</style>
+
+<html:form action="/index" styleId="eduForm">
+<html:hidden property="mode"/>
+
+	<div class="container">
+>>>>>>> bank
 		<div class="row" style="margin-top:10px">
 			<div id="main-login">
 				<div class="col-sm-12" style="min-width: 300px;">
 					<div style="text-align: center;margin-top: 50px;">
+<<<<<<< HEAD
 						<%-- <img alt="" src="${pageContext.request.contextPath}/vec/ui/img/bg/logo-login.png" height="100"/> --%>
 					</div>
 					<div style="text-align: center;margin-top: 5px;">
@@ -178,11 +278,25 @@
 							<div class="form-group">
 								<div class="col-sm-10" style="margin: 0 auto;float: none;">
 									<html:text property="un" maxlength="75" styleClass="form-control" styleId="un" onkeypress="submitEnter();" placeHolder="ชื่อผู้ใช้งาน" />
+=======
+					</div>
+					<div style="text-align: center;margin-top: 5px;">
+
+						<div class="login-box">
+							
+							<div class="form-group">
+								<div class="col-sm-10" style="margin: 0 auto;float: none;">
+									<html:text property="un" maxlength="75" onkeypress="submitEnter();" styleClass="form-control" styleId="un" placeHolder="ชื่อผู้ใช้งาน" />
+>>>>>>> bank
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-10" style="margin: 0 auto;float: none;">
+<<<<<<< HEAD
 									<html:password property="pw" maxlength="75" styleClass="form-control" styleId="pw" onkeypress="submitEnter();" placeHolder="รหัสผ่าน"/>
+=======
+									<html:password property="pw" maxlength="75" onkeypress="submitEnter();" styleClass="form-control" styleId="pw" placeHolder="รหัสผ่าน"/>
+>>>>>>> bank
 								</div>
 							</div>
 							<div class="form-group">
@@ -190,6 +304,7 @@
 									<button type="button" class="btn btn-blue btn-sm" style="width:100%;" onclick="submitFormLogin();">เข้าสู่ระบบ</button>
 								</div>
 							</div>
+<<<<<<< HEAD
 							
 							<div class="form-group">
 							<bean:define id="msgErrorCheck" value="${not empty msgError}"/>
@@ -204,6 +319,10 @@
 							</div>
 							
 							
+=======
+						
+								
+>>>>>>> bank
 						</div>
 					</div>
 				</div>

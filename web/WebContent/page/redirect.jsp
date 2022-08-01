@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 %@page contentType="text/html; charset=utf-8"%>
+=======
+<%@page contentType="text/html; charset=utf-8"%>
+>>>>>>> bank
 <%
  String useParam=(String)request.getAttribute("useParam");
  String useMode=(String)request.getAttribute("useMode");

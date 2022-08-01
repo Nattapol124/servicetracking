@@ -1,0 +1,2 @@
+	<link href="${pageContext.request.contextPath}/ui/css/bootstrap.min.css" rel="stylesheet"/>
+	<link href="${pageContext.request.contextPath}/ui/css/bootstrap-theme.css" rel="stylesheet"/>

@@ -4,23 +4,33 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+<<<<<<< HEAD
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Restrictions;
+=======
+>>>>>>> bank
 import org.springframework.dao.DataAccessException;
 
 import com.core.dao.impl.CoreDaoImpl;
 import com.gtt.server.user.dao.UserDao;
 import com.gtt.server.user.entity.Company;
 import com.gtt.server.user.entity.User;
+<<<<<<< HEAD
 import com.gtt.server.user.entity.UserType;
 
 
 public class UserDaoImpl extends CoreDaoImpl<User, Serializable>
 		implements UserDao {
+=======
+import com.gtt.server.user.entity.UserPosition;
+
+public class UserDaoImpl extends CoreDaoImpl<User, Serializable> implements UserDao{
+>>>>>>> bank
 
 	public UserDaoImpl(Class<User> entityClass) {
 		super(entityClass);
 	}
+<<<<<<< HEAD
 	@Override
 	public List findLogin(String username, String password) throws DataAccessException {
 		String sql = "SELECT user.id_user, user.username,user.password,user.user_firstname,user.user_lastname,user.user_email,user.user_phone,user.id_company,user.user_nickname FROM user WHERE username='"+username+"' AND password='"+password+"'";
@@ -71,4 +81,37 @@ public class UserDaoImpl extends CoreDaoImpl<User, Serializable>
 	}
 		return results;
 }
+=======
+	
+	@Override
+	public List<User> findLogin(String username, String password) throws DataAccessException {
+		String sql = "SELECT user.id_user, userposition.position_name, user.id_customer, user.username, user.password, user.user_firstname, user.user_lastname, user.user_nickname, user.user_phone, user.user_email FROM user "
+				+ "inner join userposition on user.id_user_position = userposition.id_user_position "
+				+ "WHERE username='"+username+"' AND password='"+password+"'";
+		  List<User> results = new ArrayList<User>();
+		  List<Object[]> objectList = getSession().createSQLQuery(sql).list();
+		  if(objectList != null && objectList.size()>0 ) {
+		   for(Object[] obj : objectList){
+		   User item = new User(Integer.parseInt(String.valueOf(obj[0])));
+		   Company customer = new Company();
+		   UserPosition userP = new UserPosition();
+		   userP.setName(String.valueOf(obj[1]));
+		   item.setUserPosition(userP);
+		   customer.setId(Integer.parseInt(String.valueOf(obj[2])));
+		   item.setCustomer(customer);
+		   item.setUsername(String.valueOf(obj[3]));
+		   item.setPassword(String.valueOf(obj[4]));
+		   item.setFirstname(String.valueOf(obj[5]));
+		   item.setLastname(String.valueOf(obj[6]));
+		   item.setNickname(String.valueOf(obj[7]));
+		   item.setPhone(String.valueOf(obj[8]));
+		   item.setEmail(String.valueOf(obj[9]));
+		   results.add(item);
+		  }
+		 }
+		  return results;
+		}	
+	
+	
+>>>>>>> bank
 }

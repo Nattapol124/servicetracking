@@ -7,6 +7,7 @@ import com.gtt.server.user.dao.CompanyTypeDao;
 import com.gtt.server.user.entity.CompanyType;
 import com.gtt.server.user.service.CompanyTypeService;
 
+<<<<<<< HEAD
 public class CompanyTypeServiceImpl extends CoreServiceImpl<CompanyType, Serializable>
 implements CompanyTypeService {
 	private CompanyTypeDao companyTypeDao;
@@ -16,4 +17,15 @@ implements CompanyTypeService {
 		// TODO Auto-generated constructor stub
 	}
 
+=======
+public class CompanyTypeServiceImpl extends CoreServiceImpl<CompanyType, Serializable> implements CompanyTypeService{
+	private CompanyTypeDao companyTypeDao;
+
+	
+	public CompanyTypeServiceImpl(CompanyTypeDao companyTypeDao) {
+		super(companyTypeDao);
+		
+		this.companyTypeDao = companyTypeDao;
+	}
+>>>>>>> bank
 }

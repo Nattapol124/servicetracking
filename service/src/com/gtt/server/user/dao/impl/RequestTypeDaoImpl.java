@@ -6,8 +6,12 @@ import com.core.dao.impl.CoreDaoImpl;
 import com.gtt.server.user.dao.RequestTypeDao;
 import com.gtt.server.user.entity.RequestType;
 
+<<<<<<< HEAD
 public class RequestTypeDaoImpl extends CoreDaoImpl<RequestType, Serializable>
 implements RequestTypeDao{
+=======
+public class RequestTypeDaoImpl extends CoreDaoImpl<RequestType, Serializable> implements RequestTypeDao{
+>>>>>>> bank
 	public RequestTypeDaoImpl(Class<RequestType> entityClass) {
 		super(entityClass);
 	}

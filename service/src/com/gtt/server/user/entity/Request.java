@@ -1,5 +1,10 @@
 package com.gtt.server.user.entity;
 
+<<<<<<< HEAD
+=======
+import java.sql.Date;
+
+>>>>>>> bank
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,8 +14,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+<<<<<<< HEAD
 import com.core.entity.CoreEntity;
 
+=======
+>>>>>>> bank
 @Entity
 @Table(name = "request")
 public class Request extends CoreEntity{
@@ -21,6 +29,7 @@ public class Request extends CoreEntity{
 	@Column(name = "id_request")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
+<<<<<<< HEAD
 	@ManyToOne
 	@JoinColumn(name = "id_user")
 	private User id_user;
@@ -53,6 +62,68 @@ public class Request extends CoreEntity{
 
 	public Request(int id) {
 		this.id = id;
+=======
+	
+	@ManyToOne
+	@JoinColumn(name = "id_user")
+	private User user;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_user_process")
+	private User userproc;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_request_status")
+	private RequestStatus request_status;
+
+	@ManyToOne
+	@JoinColumn(name = "id_request_type")
+	private RequestType request_type;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_project")
+	private Project project;
+	
+	@Column(name = "request_title")
+	private String title;
+	
+	@Column(name = "request_remark")
+	private String remark;
+	
+	@Column(name = "request_date")
+	private Date date;
+	
+	@Column(name = "request_file")
+	private String file;
+	
+	@Column(name = "request_dateStart")
+	private String dateStart;
+	
+	@Column(name = "request_dateEnd")
+	private String dateEnd;
+	
+
+
+
+	public String getDateStart() {
+		return dateStart;
+	}
+
+	public void setDateStart(String dateStart) {
+		this.dateStart = dateStart;
+	}
+
+	public String getDateEnd() {
+		return dateEnd;
+	}
+
+	public void setDateEnd(String dateEnd) {
+		this.dateEnd = dateEnd;
+	}
+
+	public Request() {
+		// TODO Auto-generated constructor stub
+>>>>>>> bank
 	}
 
 	public int getId() {
@@ -63,6 +134,7 @@ public class Request extends CoreEntity{
 		this.id = id;
 	}
 
+<<<<<<< HEAD
 	public User getId_user() {
 		return id_user;
 	}
@@ -153,6 +225,84 @@ public class Request extends CoreEntity{
 		this.request_title = request_title;
 	}
 
+=======
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public User getUserproc() {
+		return userproc;
+	}
+
+	public void setUserproc(User userproc) {
+		this.userproc = userproc;
+	}
+
+	public RequestStatus getRequest_status() {
+		return request_status;
+	}
+
+	public void setRequest_status(RequestStatus request_status) {
+		this.request_status = request_status;
+	}
+
+	public RequestType getRequest_type() {
+		return request_type;
+	}
+
+	public void setRequest_type(RequestType request_type) {
+		this.request_type = request_type;
+	}
+
+	public Project getProject() {
+		return project;
+	}
+
+	public void setProject(Project project) {
+		this.project = project;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getRemark() {
+		return remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public String getFile() {
+		return file;
+	}
+
+	public void setFile(String file) {
+		this.file = file;
+	}
+
+
+
+	
+
+>>>>>>> bank
 	
 	
 }

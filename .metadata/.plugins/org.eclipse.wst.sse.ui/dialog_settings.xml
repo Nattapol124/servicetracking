@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="contentassistsize">
 	</section>
+<<<<<<< HEAD
 	<section name="org.eclipse.wst.sse.ui.quick_outline">
 		<item key="org.eclipse.wst.sse.ui.internal.quickoutline.QuickOutlinePopupDialogDIALOG_WIDTH" value="400"/>
 		<item key="org.eclipse.wst.sse.ui.internal.quickoutline.QuickOutlinePopupDialogDIALOG_HEIGHT" value="320"/>
@@ -10,4 +11,6 @@
 		<item key="org.eclipse.wst.sse.ui.internal.quickoutline.QuickOutlinePopupDialogDIALOG_USE_PERSISTED_SIZE" value="true"/>
 		<item key="org.eclipse.wst.sse.ui.internal.quickoutline.QuickOutlinePopupDialogDIALOG_USE_PERSISTED_LOCATION" value="true"/>
 	</section>
+=======
+>>>>>>> bank
 </section>

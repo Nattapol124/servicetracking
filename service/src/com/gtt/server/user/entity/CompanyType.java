@@ -2,6 +2,7 @@ package com.gtt.server.user.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+<<<<<<< HEAD
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -29,17 +30,38 @@ public class CompanyType extends CoreEntity {
 	}
 
 
+=======
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table (name = "companytype")
+public class CompanyType extends CoreEntity{
+	
+	private static final long serialVersionUID = 1L;
+	
+	@Id 
+	@Column(name = "id_company_type")
+	private int id;
+	
+	@Column(name = "type_name")
+	private String name;
+>>>>>>> bank
 
 	public int getId() {
 		return id;
 	}
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> bank
 	public void setId(int id) {
 		this.id = id;
 	}
 
+<<<<<<< HEAD
 
 
 	public String getType_name() {
@@ -55,4 +77,15 @@ public class CompanyType extends CoreEntity {
 	
 
 
+=======
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
+>>>>>>> bank
 }

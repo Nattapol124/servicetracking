@@ -4,6 +4,7 @@
 <%@taglib uri="/tld/struts-logic.tld" prefix="logic"%>
 <%@taglib uri="/tld/c.tld" prefix="c"%>
 <%@taglib uri="/tld/fn.tld" prefix="fn"%>
+<<<<<<< HEAD
 <%@ include file="/page/inc_header_script.jsp"%>
 <style type="text/css">
 html, body {
@@ -65,3 +66,26 @@ $( '#topheader .navbar-nav a' ).on( 'click', function () {
     </div>
   </div>
 </div>
+=======
+
+<!--sidebar start-->
+<aside>
+	<div id="sidebar" class="nav-collapse">
+		<!-- sidebar menu start-->
+		<ul class="sidebar-menu">
+			<li>
+				<a href="index.htm?mode=getRequest">
+					<span>request table</span>
+				</a>
+			</li>
+			<li>
+				<a href="index.htm?mode=getProject">
+					<span>add request</span>
+				</a>
+			</li>
+		</ul>
+   		<!-- sidebar menu end -->
+		
+	</div>
+</aside>
+>>>>>>> bank

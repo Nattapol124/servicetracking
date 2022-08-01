@@ -16,6 +16,7 @@
 			<list>
 				
 				<!-- User -->
+<<<<<<< HEAD
 				<value>com.gtt.server.user.entity.User</value>
 				<value>com.gtt.server.user.entity.UserProject</value>
 				<value>com.gtt.server.user.entity.UserPrefix</value>
@@ -27,6 +28,21 @@
 				<value>com.gtt.server.user.entity.Request</value>
 				<value>com.gtt.server.user.entity.RequestStatus</value>
 				<value>com.gtt.server.user.entity.RequestType</value>
+=======
+				
+				
+				<value>com.gtt.server.user.entity.Company</value>
+				<value>com.gtt.server.user.entity.CompanyType</value>
+				<value>com.gtt.server.user.entity.Project</value>
+				<value>com.gtt.server.user.entity.Request</value>
+				<value>com.gtt.server.user.entity.RequestStatus</value>
+				<value>com.gtt.server.user.entity.RequestType</value>
+				<value>com.gtt.server.user.entity.User</value>
+				<value>com.gtt.server.user.entity.UserPosition</value>
+				<value>com.gtt.server.user.entity.UserPrefix</value>
+				<value>com.gtt.server.user.entity.UserProject</value>
+				<value>com.gtt.server.user.entity.UserType</value>
+>>>>>>> bank
 				
 			</list>
 		</property>
