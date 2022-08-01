@@ -3,6 +3,8 @@ package com.core.dao;
 import java.io.Serializable;
 import java.util.List;
 
+import org.springframework.dao.DataAccessException;
+
 public interface CoreDao<T, PK extends Serializable> {
 
 	public void insert(T entity);
@@ -28,4 +30,6 @@ public interface CoreDao<T, PK extends Serializable> {
 	public List<T> findByQueryParam(String namedQuery, String[] params, Object[] conditions);
 
 	public int sqlQuary(String sql);
+
+
 }

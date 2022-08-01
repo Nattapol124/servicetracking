@@ -28,7 +28,7 @@
 			<form-property name="email" type="java.lang.String" />
 			<form-property name="phone" type="java.lang.String" />
 			<form-property name="company" type="java.lang.String" />
-			
+			<form-property name="resultProjectList" type="java.util.List" />
 			<form-property name="uploadFile" type="org.apache.struts.upload.FormFile" />
 			
 			<form-property name="user_username" type="com.gtt.server.user.entity.User" />
@@ -48,6 +48,7 @@
 			<forward name="MA02" path="/page/master/MA02_Register.jsp" />
 			<forward name="MA03" path="/page/master/MA03_Profile.jsp" />
 			<forward name="MA04" path="/page/master/MA04_ChangePassword.jsp" />
+			<forward name="MA05" path="/page/master/MA05_ChangeUserData.jsp" />
 			
 			
 

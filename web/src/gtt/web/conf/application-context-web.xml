@@ -14,9 +14,10 @@
 	<bean name="/login" class="gtt.web.action.LoginAction">
 		<property name="UserService">
 			<ref bean="UserService" />
+		</property> 
+		<property name="ProjectService">
+			<ref bean="ProjectService" />
 		</property>
-
-	
 	</bean>
 	
 	

@@ -13,8 +13,9 @@ html, body {
 	height: 100%;
 	width: 100%;
 }
+
 h1 {
-    text-align:center;
+	text-align: center;
 }
 
 .backplane {
@@ -46,17 +47,16 @@ h1 {
 }
 
 .inthebox {
-	margin-left:10%;
-	margin-right:10%;
-	
+	margin-left: 10%;
+	margin-right: 10%;
 	width: 80%;
 	background: #e8ffff;
-	top:20%;
-	border-radius:15px;
+	top: 20%;
+	border-radius: 15px;
 }
 
 .profilebox {
-	left:40%;
+	left: 40%;
 }
 
 /* Color of the links BEFORE scroll */

@@ -24,10 +24,15 @@ public class Project extends CoreEntity{
 	private Company id_customer;
 	@Column(name = "project_name")
 	private String project_name;
+
 	
 	
 	public Project() {
 	
+	}
+	
+	public Project(int id) {
+		this.id = id;
 	}
 
 
@@ -59,7 +64,6 @@ public class Project extends CoreEntity{
 	public void setProject_name(String project_name) {
 		this.project_name = project_name;
 	}
-
 	
-
+	
 }
